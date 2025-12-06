@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /truth.html
+Allow: /vision.html
+Allow: /action.html
+Allow: /contact.html
+Allow: /future.html
+Allow: /resources.html
+Allow: /manifesto.html
+Allow: /style.css
+Allow: /particles.js
+Allow: /animations.js
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /secret/
+
+Crawl-delay: 10
+
+Sitemap: https://tiggenmov.github.io/sitemap.xml
+Sitemap: https://tiggenmov.github.io/sitemap_index.xml
+
+# Tigray Generational Movement - Public Archive
+# Memory • Resistance • Sovereignty • For All Generations
+# Last updated: 2025-04-15

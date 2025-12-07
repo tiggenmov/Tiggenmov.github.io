@@ -1,177 +1,148 @@
-<head>
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-  .hero {
-    height: 100vh;
-    background: url("hero.jpg") center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  .overlay {
-    background: rgba(0,0,0,0.4);
-    padding: 20px 40px;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
-  }
-  </style>
-</head>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TIG GEN MOV — The Generation of Change</title>
-  <meta name="description" content="Tigray Generational Movement — Memory, Resistance, Sovereignty. Youth-led, action-first." />
-
-  <!-- Social / Sharing -->
+  <meta name="description" content="Tigray Generational Movement — Memory • Resistance • Sovereignty. Youth-led, action-first." />
   <meta property="og:title" content="TIG GEN MOV — The Generation of Change" />
   <meta property="og:description" content="Memory • Resistance • Sovereignty — Join the generational covenant." />
   <meta property="og:image" content="/images/og-image.jpg" />
   <meta property="og:type" content="website" />
-
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-  <body>
-
-<section class="hero">
-  <div class="overlay">
-    <h1>TIG GEN MOV</h1>
-    <p>The Generation of Change</p>
-  </div>
-</section>
-
-</body>
-  <header class="topbar">
-    <div class="container topbar-grid">
-      <a class="logo" href="/">
-        <!-- use /images/logo.svg or inline if you prefer -->
-        <img src="/images/logo.svg" alt="TIG GEN MOV" />
-        <span class="brand">TIG GEN MOV</span>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="/">
+        <img src="/images/logo.svg" alt="TIG GEN MOV logo" class="logo" />
+        <span class="brand-text">TIG GEN MOV</span>
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="nav-list">
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button id="hambtn" class="hambtn" aria-expanded="false" aria-controls="primary-menu" title="Toggle menu">
           <span></span><span></span><span></span>
         </button>
 
-        <ul id="nav-list" class="nav-list">
+        <ul id="primary-menu" class="menu">
           <li><a href="/">Home</a></li>
           <li><a href="truth.html">Truth</a></li>
           <li><a href="vision.html">Vision</a></li>
           <li><a href="action.html">Take Action</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="nav-cta" href="action.html">Join</a></li>
+          <li><a href="action.html" class="cta">Join</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="kicker">TIGRAY • GENERATIONAL • MOVEMENT</p>
-            <h1 class="hero-title">The Generation of Change</h1>
-            <p class="hero-sub">We hold memory. We organize resistance. We build sovereignty. Youth-led. Future-focused.</p>
+  <!-- Hero -->
+  <section id="hero" class="hero" role="banner" aria-label="Main banner">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-            <div class="hero-actions">
-              <a class="btn primary" href="action.html">Take Action</a>
-              <a class="btn ghost" href="vision.html">Our Vision</a>
-            </div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="kicker">TIGRAY • GENERATIONAL • MOVEMENT</p>
+        <h1 class="hero-title">The Generation of Change</h1>
+        <p class="hero-lead">We hold memory. We organize resistance. We build sovereignty. Youth-led. Future-focused.</p>
 
-            <div class="hero-stats">
-              <div><strong>1000+</strong><span>stories archived</span></div>
-              <div><strong>30+</strong><span>active networks</span></div>
-              <div><strong>1</strong><span>generational covenant</span></div>
-            </div>
-          </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="action.html">Take Action</a>
+          <a class="btn outline" href="vision.html">Our Vision</a>
+        </div>
 
-          <figure class="hero-image" aria-hidden="true">
-            <img src="/images/hero.jpg" alt="" />
-            <figcaption class="photo-credit">Photo: TIG GEN MOV</figcaption>
-          </figure>
+        <div class="hero-stats" aria-hidden="true">
+          <div><strong>1000+</strong><span>stories archived</span></div>
+          <div><strong>30+</strong><span>active networks</span></div>
+          <div><strong>1</strong><span>generational covenant</span></div>
         </div>
       </div>
-    </section>
 
-    <!-- PILLARS -->
-    <section class="pillars" id="pillars">
-      <div class="container">
-        <h2 class="section-title">Our Three Pillars</h2>
-        <div class="pillar-grid">
-          <article class="pillar">
-            <div class="pill-icon">📜</div>
-            <h3>Memory</h3>
-            <p>We collect testimonies, documents, and open-source evidence so the truth about atrocities is preserved forever.</p>
-          </article>
+      <figure class="hero-side" aria-hidden="true">
+        <img src="/images/hero.jpg" alt="" />
+        <figcaption class="photo-credit">Photo: TIG GEN MOV</figcaption>
+      </figure>
+    </div>
+  </section>
 
-          <article class="pillar">
-            <div class="pill-icon">✊</div>
-            <h3>Resistance</h3>
-            <p>Digital campaigns, community defense, and international advocacy — we mobilize at every level to defend dignity.</p>
-          </article>
+  <!-- Pillars -->
+  <section id="pillars" class="pillars">
+    <div class="container">
+      <h2 class="section-title">Our Three Pillars</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">📜</div>
+          <h3>Memory</h3>
+          <p>We collect testimonies, documents, and open-source evidence so the truth is kept for generations.</p>
+        </article>
 
-          <article class="pillar">
-            <div class="pill-icon">🌱</div>
-            <h3>Sovereignty</h3>
-            <p>Education, institution building, and economic reconstruction — we secure a future governed by Tigrayans themselves.</p>
-          </article>
-        </div>
+        <article class="card">
+          <div class="card-icon">✊</div>
+          <h3>Resistance</h3>
+          <p>Digital activism, community resilience, and international advocacy — we mobilize everywhere.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌱</div>
+          <h3>Sovereignty</h3>
+          <p>Education, local institutions, and sustainable reconstruction — we build lasting autonomy.</p>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ABOUT / MISSION -->
-    <section class="about">
-      <div class="container about-grid">
-        <div class="about-media">
-          <img src="/images/hero.jpg" alt="Tigray youth united" />
-        </div>
-        <div class="about-copy">
-          <h2>We Are the Unbroken Chain</h2>
-          <p>We are a coalition of young Tigrayans reclaiming the narrative. We combine archival truth-work with grassroots organizing and institution building. Our work is pragmatic, secure, and rooted in dignity.</p>
-          <p class="cta-row">
-            <a class="btn primary hollow" href="truth.html">Explore the Archive</a>
-            <a class="btn ghost" href="contact.html">Contact Securely</a>
-          </p>
-        </div>
+  <!-- About / Mission -->
+  <section class="about">
+    <div class="container about-grid">
+      <div class="about-media">
+        <img src="/images/hero.jpg" alt="Tigray youth united" />
       </div>
-    </section>
-
-    <!-- LATEST -->
-    <section class="latest">
-      <div class="container">
-        <h2 class="section-title inverse">Latest from the Movement</h2>
-        <div class="update">
-          <h4>📢 The Launch of Tig Gen Mov</h4>
-          <p>We declare the beginning of a new epoch — a generational covenant for justice and freedom. Join us to build Tigray 2.0, built by us.</p>
-          <a href="vision.html" class="link">Read the Full Vision →</a>
-        </div>
+      <div class="about-copy">
+        <h2>We Are the Unbroken Chain</h2>
+        <p>We are a coalition of young Tigrayans reclaiming the narrative. We combine archival truth-work with grassroots organizing and institution building. Our work is pragmatic, secure, and rooted in dignity.</p>
+        <p class="btn-row">
+          <a class="btn primary hollow" href="truth.html">Explore the Archive</a>
+          <a class="btn outline" href="contact.html">Contact Securely</a>
+        </p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-top">
+  <!-- Latest / CTA -->
+  <section class="latest">
+    <div class="container">
+      <h2 class="section-title">Latest from the Movement</h2>
+      <div class="update">
+        <h4>📢 The Launch of Tig Gen Mov</h4>
+        <p>We declare a new epoch — a generational covenant for justice and freedom. Join the movement and help build Tigray 2.0.</p>
+        <a class="readmore" href="vision.html">Read the Full Vision →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="brand-col">
         <img src="/images/logo-light.svg" alt="TIG GEN MOV" class="footer-logo" />
-        <nav class="footer-nav">
-          <a href="/">Home</a> · <a href="truth.html">Truth</a> · <a href="vision.html">Vision</a> · <a href="action.html">Take Action</a>
-        </nav>
+        <p class="muted">Memory • Resistance • Sovereignty</p>
       </div>
 
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> Tigray Generational Movement — Memory • Resistance • Sovereignty</p>
-        <p class="warning">⚠️ Stay Secure. Use VPN. Share Wisely.</p>
+      <nav class="footnav" aria-label="Footer links">
+        <a href="/">Home</a>
+        <a href="truth.html">Truth</a>
+        <a href="vision.html">Vision</a>
+        <a href="action.html">Take Action</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="legal">
+        <p>© <span id="currentYear"></span> Tigray Generational Movement</p>
+        <p class="security">⚠️ Stay Secure. Use VPN. Share Wisely.</p>
       </div>
     </div>
   </footer>

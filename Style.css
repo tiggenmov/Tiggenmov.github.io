@@ -1,3 +1,77 @@
+/* Main Title Styling */
+.main-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  margin: 0 0 20px 0;
+  color: #fff;
+  line-height: 1.2;
+  background: linear-gradient(90deg, var(--accent-gold), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.logo-text {
+  color: var(--accent-gold);
+  -webkit-text-fill-color: var(--accent-gold);
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+}
+
+.motto {
+  color: var(--muted);
+  -webkit-text-fill-color: var(--muted);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* Adjust existing hero spacing */
+.hero-copy .kicker {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .main-title {
+    font-size: 1.9rem;
+  }
+  .motto {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .main-title {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .motto {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+  .motto {
+    font-size: 1.1rem;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}
 .motto-image {
   max-width: 600px;
   margin: 20px auto;

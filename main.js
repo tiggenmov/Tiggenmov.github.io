@@ -1,50 +1,45 @@
-// Minimal JS: mobile menu + hero pointer parallax
+// Small site JS: mobile toggle, pointer parallax, year
 (function(){
-  // nav toggle
-  const btn = document.getElementById('hamburger');
-  const nav = document.getElementById('nav-list');
-  if(btn && nav){
+  // mobile menu
+  const btn = document.getElementById('hambtn');
+  const menu = document.getElementById('primary-menu');
+  if(btn && menu){
     btn.addEventListener('click', ()=>{
       const open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
-      nav.style.display = open ? 'none' : 'flex';
-      nav.style.flexDirection = 'column';
-      nav.style.gap = '12px';
-      nav.style.padding = '12px';
-      nav.style.background = 'linear-gradient(180deg, rgba(3,3,3,0.72), rgba(3,3,3,0.8))';
-      nav.style.borderRadius = '12px';
-      nav.style.position = 'absolute';
-      nav.style.right = '20px';
-      nav.style.top = '66px';
+      if(open){
+        menu.style.display = '';
+        menu.style.position = '';
+      } else {
+        menu.style.display = 'flex';
+        menu.style.position = 'absolute';
+        menu.style.top = '66px';
+        menu.style.right = '18px';
+        menu.style.background = 'linear-gradient(180deg, rgba(3,3,3,0.86), rgba(3,3,3,0.96))';
+        menu.style.padding = '12px';
+        menu.style.borderRadius = '12px';
+        menu.style.flexDirection = 'column';
+        menu.style.gap = '10px';
+        menu.style.boxShadow = '0 18px 60px rgba(0,0,0,0.6)';
+      }
     });
-    // close on resize
-    window.addEventListener('resize', ()=>{ if(window.innerWidth > 820){ nav.style.display = 'flex'; nav.style.position = 'static'; }});
+    window.addEventListener('resize', ()=>{ if(window.innerWidth > 820){ menu.style.display = ''; menu.style.position = ''; }});
   }
 
-  // hero pointer parallax
+  // hero subtle pointer parallax for hero-side
   const hero = document.getElementById('hero');
   if(hero){
+    const side = hero.querySelector('.hero-side');
     hero.addEventListener('pointermove', (e)=>{
-      const rect = hero.getBoundingClientRect();
-      const px = (e.clientX - rect.left) / rect.width - 0.5;
-      const py = (e.clientY - rect.top) / rect.height - 0.5;
-      const bg = hero.querySelector('.hero::before'); // not directly selectable
-      // subtle transform via style on pseudo not possible; instead nudge hero background element
-      hero.style.setProperty('--mx', (px*6).toFixed(2) + 'px');
-      hero.style.setProperty('--my', (py*6).toFixed(2) + 'px');
-      hero.querySelector('::before');
-      // fallback: transform the hero-inner slightly
-      const inner = hero.querySelector('.hero-inner');
-      if(inner) inner.style.transform = `translate3d(${px*10}px, ${py*6}px, 0)`;
+      const r = hero.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      if(side) side.style.transform = `translate3d(${px * 10}px, ${py * 6}px, 0)`;
     });
-    hero.addEventListener('pointerleave', ()=>{
-      const inner = hero.querySelector('.hero-inner');
-      if(inner) inner.style.transform = '';
-    });
+    hero.addEventListener('pointerleave', ()=>{ const side = hero.querySelector('.hero-side'); if(side) side.style.transform = ''; });
   }
 
-  // current year in footer
-  const y = new Date().getFullYear();
-  const el = document.getElementById('year');
-  if(el) el.textContent = y;
+  // set current year
+  const yearEl = document.getElementById('currentYear');
+  if(yearEl) yearEl.textContent = new Date().getFullYear();
 })();

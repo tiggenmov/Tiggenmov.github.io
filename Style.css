@@ -1,3 +1,16 @@
+.motto-image {
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.motto-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 /* -------------------------
    TIG GEN MOV — Homepage CSS
    Energetic • Youthful • Modern

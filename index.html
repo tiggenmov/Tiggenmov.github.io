@@ -1,41 +1,67 @@
-<!-- In your header, replace the logo img with: -->
-<a class="brand" href="/">
-
-  <span class="brand-text">TIG GEN MOV</span>
-</a>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TIG GEN MOV — The Generation of Change</title>
-  <meta name="description" content="Tigray Generational Movement — Memory • Resistance • Sovereignty. Youth-led, action-first." />
-  <meta property="og:title" content="TIG GEN MOV — The Generation of Change" />
-  <meta property="og:description" content="Memory • Resistance • Sovereignty — Join the generational covenant." />
-  <meta property="og:image" content="/images/og-image.jpg" />
+  <title>TIG GEN MOV — Tigray Generational Movement</title>
+  <meta name="description" content="Tigray Generational Movement — Memory • Resistance • Sovereignty • For All Generations. Youth-led, action-first movement for justice and sovereignty." />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="Tigray, genocide, justice, sovereignty, Ethiopia, Eritrea, human rights, TPLF, Tigray movement, justice for Tigray">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  <meta name="author" content="Tigray Generational Movement">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="TIG GEN MOV — Tigray Generational Movement" />
+  <meta property="og:description" content="Memory • Resistance • Sovereignty • For All Generations — Join the generational covenant." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518834103328-63b4d2b203b3" />
+  <meta property="og:url" content="https://tiggenmov.github.io" />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tigray Generational Movement">
+  <meta name="twitter:description" content="Justice for Tigray. Sovereignty for our future.">
+  
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="b7MW3wXcaMaEr9hMFkZfUbVA2LyCm3MJgVLb4A-uN08" />
+  
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tiggenmov.github.io">
+  
+  <!-- Styles & Fonts -->
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tigray Generational Movement | Memory • Resistance • Sovereignty</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="b7MW3wXcaMaEr9hMFkZfUbVA2LyCm3MJgVLb4A-uN08" />
-    
-    <!-- Your other code continues below -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#b22222" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: "#ffd700", opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 2, direction: "none" }
+      }
+    });
+  </script>
+
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container header-grid">
       <a class="brand" href="/">
-        <img src="/images/logo.svg" alt="TIG GEN MOV logo" class="logo" />
+        <span class="text-logo">TGM</span>
         <span class="brand-text">TIG GEN MOV</span>
       </a>
 
@@ -46,73 +72,95 @@
 
         <ul id="primary-menu" class="menu">
           <li><a href="/">Home</a></li>
-          <li><a href="truth.html">Truth</a></li>
-          <li><a href="vision.html">Vision</a></li>
+          <li><a href="truth.html">Truth & Archive</a></li>
+          <li><a href="vision.html">Vision & Future</a></li>
           <li><a href="action.html">Take Action</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="action.html" class="cta">Join</a></li>
+          <li><a href="action.html" class="cta">Join Movement</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-<section id="hero" class="hero" role="banner" aria-label="Main banner">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <!-- Hero Section -->
+  <section id="hero" class="hero" role="banner" aria-label="Main banner">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <!-- Main Title with Motto -->
+        <h2 class="main-title">
+          <span class="logo-text">TIG GEN MOV</span>
+          <span class="divider"> — </span>
+          <span class="motto">OUR FUTURE, OUR WILL, OUR ACTION</span>
+        </h2>
+        
+        <!-- Motto Image -->
+        <div class="motto-image">
+          <img src="https://images.unsplash.com/photo-1518834103328-63b4d2b203b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Tigray Generational Movement - United for Justice" />
+        </div>
+        
+        <p class="kicker">TIGRAY • GENERATIONAL • MOVEMENT</p>
+        <h1 class="hero-title">The Generation of Change</h1>
+        <p class="hero-lead">We hold memory. We organize resistance. We build sovereignty. Youth-led. Future-focused. For all generations of Tigrayans.</p>
 
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <!-- ADD THIS MAIN TITLE -->
-      <h2 class="main-title">
-        <span class="logo-text">TIG GEN MOV</span>
-        <span class="divider"> - </span>
-        <span class="motto">OUR FUTURE, OUR WILL, OUR ACTION</span>
-      </h2>
-      
-      <p class="kicker">TIGRAY • GENERATIONAL • MOVEMENT</p>
-      <h1 class="hero-title">The Generation of Change</h1>
-      <p class="hero-lead">We hold memory. We organize resistance. We build sovereignty. Youth-led. Future-focused.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="action.html">
+            <i class="fas fa-fist-raised"></i> Take Action
+          </a>
+          <a class="btn outline" href="vision.html">
+            <i class="fas fa-eye"></i> Our Vision
+          </a>
+          <a class="btn hollow" href="truth.html">
+            <i class="fas fa-archive"></i> Explore Archive
+          </a>
+        </div>
 
-      <div class="hero-actions">
-        <a class="btn primary" href="action.html">Take Action</a>
-        <a class="btn outline" href="vision.html">Our Vision</a>
+        <div class="hero-stats" aria-hidden="true">
+          <div><strong>4,892+</strong><span>stories archived</span></div>
+          <div><strong>156+</strong><span>countries reached</span></div>
+          <div><strong>12,405+</strong><span>movement members</span></div>
+          <div><strong>1</strong><span>generational covenant</span></div>
+        </div>
       </div>
 
-      <div class="hero-stats" aria-hidden="true">
-        <div><strong>1000+</strong><span>stories archived</span></div>
-        <div><strong>30+</strong><span>active networks</span></div>
-        <div><strong>1</strong><span>generational covenant</span></div>
-      </div>
+      <!-- Hero Side Element for Parallax -->
+      <figure class="hero-side" aria-hidden="true">
+        <div class="hero-side-content">
+          <h3>Memory • Resistance • Sovereignty</h3>
+          <p>For All Generations</p>
+          <p style="margin-top: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+            <i class="fas fa-shield-alt"></i> Secure Platform<br>
+            <i class="fas fa-globe"></i> Global Network<br>
+            <i class="fas fa-history"></i> Historical Archive
+          </p>
+        </div>
+      </figure>
     </div>
+  </section>
 
-    <figure class="hero-side" aria-hidden="true">
-      <img src="/images/hero.jpg" alt="" />
-      <figcaption class="photo-credit">Photo: TIG GEN MOV</figcaption>
-    </figure>
-  </div>
-</section>
-
-  <!-- Pillars -->
+  <!-- Pillars Section -->
   <section id="pillars" class="pillars">
     <div class="container">
       <h2 class="section-title">Our Three Pillars</h2>
       <div class="card-grid">
         <article class="card">
-          <div class="card-icon">📜</div>
+          <div class="card-icon"><i class="fas fa-book"></i></div>
           <h3>Memory</h3>
-          <p>We collect testimonies, documents, and open-source evidence so the truth is kept for generations.</p>
+          <p>We collect testimonies, documents, and open-source evidence so the truth is kept for generations. Digital archives protect our history from erasure.</p>
+          <a href="truth.html" class="readmore">Explore Archive →</a>
         </article>
 
         <article class="card">
-          <div class="card-icon">✊</div>
+          <div class="card-icon"><i class="fas fa-fist-raised"></i></div>
           <h3>Resistance</h3>
-          <p>Digital activism, community resilience, and international advocacy — we mobilize everywhere.</p>
+          <p>Digital activism, community resilience, and international advocacy — we mobilize everywhere. From social media to streets, we maintain the will to be free.</p>
+          <a href="action.html" class="readmore">Join Resistance →</a>
         </article>
 
         <article class="card">
-          <div class="card-icon">🌱</div>
+          <div class="card-icon"><i class="fas fa-flag"></i></div>
           <h3>Sovereignty</h3>
-          <p>Education, local institutions, and sustainable reconstruction — we build lasting autonomy.</p>
+          <p>Education, local institutions, and sustainable reconstruction — we build lasting autonomy. Tigrayans controlling Tigray's future is our ultimate goal.</p>
+          <a href="vision.html" class="readmore">Build Sovereignty →</a>
         </article>
       </div>
     </div>
@@ -122,15 +170,20 @@
   <section class="about">
     <div class="container about-grid">
       <div class="about-media">
-        <img src="/images/hero.jpg" alt="Tigray youth united" />
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Tigray youth united for sovereignty" />
       </div>
       <div class="about-copy">
         <h2>We Are the Unbroken Chain</h2>
         <p>We are a coalition of young Tigrayans reclaiming the narrative. We combine archival truth-work with grassroots organizing and institution building. Our work is pragmatic, secure, and rooted in dignity.</p>
-        <p class="btn-row">
-          <a class="btn primary hollow" href="truth.html">Explore the Archive</a>
-          <a class="btn outline" href="contact.html">Contact Securely</a>
-        </p>
+        <p>This movement spans generations until justice is served and sovereignty achieved. We are the bridge between past suffering and future freedom.</p>
+        <div class="btn-row">
+          <a class="btn primary hollow" href="truth.html">
+            <i class="fas fa-database"></i> Explore the Archive
+          </a>
+          <a class="btn outline" href="contact.html">
+            <i class="fas fa-lock"></i> Contact Securely
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -140,9 +193,18 @@
     <div class="container">
       <h2 class="section-title">Latest from the Movement</h2>
       <div class="update">
-        <h4>📢 The Launch of Tig Gen Mov</h4>
-        <p>We declare a new epoch — a generational covenant for justice and freedom. Join the movement and help build Tigray 2.0.</p>
-        <a class="readmore" href="vision.html">Read the Full Vision →</a>
+        <h4><i class="fas fa-bullhorn"></i> 📢 The Launch of Tig Gen Mov</h4>
+        <p>We declare a new epoch — a generational covenant for justice and freedom. Join the movement and help build Tigray's sovereign future. 2025 is our year of organized resistance and evidence collection.</p>
+        <a class="readmore" href="vision.html">
+          <i class="fas fa-arrow-right"></i> Read the Full Vision →
+        </a>
+      </div>
+      <div class="update" style="margin-top: 20px;">
+        <h4><i class="fas fa-calendar-check"></i> 🎯 2025 Roadmap Released</h4>
+        <p>Our detailed 2025-2035 sovereignty blueprint is now available. Phase 1 (2025-2027): Secure Foundation. Phase 2 (2028-2030): Economic Independence. Phase 3 (2031-2033): Political Self-Determination.</p>
+        <a class="readmore" href="future.html">
+          <i class="fas fa-chart-line"></i> View 10-Year Plan →
+        </a>
       </div>
     </div>
   </section>
@@ -151,25 +213,40 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <div class="brand-col">
-        <img src="/images/logo-light.svg" alt="TIG GEN MOV" class="footer-logo" />
-        <p class="muted">Memory • Resistance • Sovereignty</p>
+        <span class="text-logo" style="width: 60px; height: 60px; font-size: 18px;">TGM</span>
+        <p class="motto" style="margin-top: 10px; font-size: 1.2rem;">Memory • Resistance • Sovereignty</p>
+        <p style="color: var(--muted); margin-top: 5px; font-size: 0.9rem;">For All Generations</p>
       </div>
 
       <nav class="footnav" aria-label="Footer links">
-        <a href="/">Home</a>
-        <a href="truth.html">Truth</a>
-        <a href="vision.html">Vision</a>
-        <a href="action.html">Take Action</a>
-        <a href="contact.html">Contact</a>
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="truth.html"><i class="fas fa-archive"></i> Truth & Archive</a>
+        <a href="vision.html"><i class="fas fa-eye"></i> Vision & Future</a>
+        <a href="action.html"><i class="fas fa-fist-raised"></i> Take Action</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="resources.html"><i class="fas fa-tools"></i> Resources</a>
+        <a href="manifesto.html"><i class="fas fa-scroll"></i> Manifesto</a>
       </nav>
 
       <div class="legal">
-        <p>© <span id="currentYear"></span> Tigray Generational Movement</p>
+        <p>© <span id="currentYear">2025</span> Tigray Generational Movement</p>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 5px;">
+          <i class="fas fa-shield-alt"></i> Secure Platform<br>
+          <i class="fas fa-user-secret"></i> Anonymous Hosting<br>
+          <i class="fas fa-globe"></i> Global Network
+        </p>
         <p class="security">⚠️ Stay Secure. Use VPN. Share Wisely.</p>
+        <p style="color: var(--muted); font-size: 0.8rem; margin-top: 10px;">
+          #TigGenMov | #JusticeIsGenerational | #OurEpoch
+        </p>
       </div>
     </div>
   </footer>
 
+  <!-- Back to Top Button (Added by JavaScript) -->
+  
+  <!-- JavaScript Files -->
   <script src="main.js"></script>
+  <script src="animations.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
   <meta name="author" content="Tigray Generational Movement">
-  <link rel="stylesheet" href="animations.css">
+  
   <!-- Open Graph -->
   <meta property="og:title" content="TIG GEN MOV — Tigray Generational Movement" />
   <meta property="og:description" content="Memory • Resistance • Sovereignty • For All Generations — Join the generational covenant." />
@@ -61,8 +61,42 @@
   <header class="site-header">
     <div class="container header-grid">
       <a class="brand" href="/">
-        <span class="text-logo">TGM</span>
-        <span class="brand-text">TIG GEN MOV</span>
+        <!-- SVG Logo -->
+        <svg class="logo-svg" viewBox="0 0 600 300" width="200" height="60" aria-label="Tigray Generational Movement">
+          <defs>
+            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#b22222;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          
+          <rect x="0" y="0" width="600" height="300" rx="20" fill="url(#redGradient)"/>
+          
+          <text x="300" y="110" text-anchor="middle" 
+                font-family="Montserrat, sans-serif" 
+                font-size="60" 
+                font-weight="800" 
+                fill="url(#goldGradient)">
+            TIG GEN MOV
+          </text>
+          
+          <text x="300" y="180" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="28" 
+                font-weight="600" 
+                fill="#ffffff">
+            OUR FUTURE, OUR WILL, OUR ACTION
+          </text>
+          
+          <line x1="150" y1="140" x2="450" y2="140" 
+                stroke="#ffffff" 
+                stroke-width="3" 
+                stroke-linecap="round"/>
+        </svg>
       </a>
 
       <nav class="primary-nav" aria-label="Main navigation">
@@ -213,9 +247,27 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <div class="brand-col">
-        <span class="text-logo" style="width: 60px; height: 60px; font-size: 18px;">TGM</span>
-        <p class="motto" style="margin-top: 10px; font-size: 1.2rem;">Memory • Resistance • Sovereignty</p>
-        <p style="color: var(--muted); margin-top: 5px; font-size: 0.9rem;">For All Generations</p>
+        <!-- Footer Logo Version -->
+        <svg class="footer-logo" viewBox="0 0 400 200" width="180" height="90" aria-label="Tigray Generational Movement">
+          <rect x="0" y="0" width="400" height="200" rx="10" fill="#b22222"/>
+          <text x="200" y="80" text-anchor="middle" 
+                font-family="Montserrat, sans-serif" 
+                font-size="36" 
+                font-weight="800" 
+                fill="#ffd700">
+            TIG GEN MOV
+          </text>
+          <text x="200" y="130" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="16" 
+                font-weight="600" 
+                fill="#ffffff">
+            OUR FUTURE, OUR WILL, OUR ACTION
+          </text>
+        </svg>
+        <p style="color: var(--muted); margin-top: 10px; font-size: 0.9rem;">
+          Memory • Resistance • Sovereignty • For All Generations
+        </p>
       </div>
 
       <nav class="footnav" aria-label="Footer links">

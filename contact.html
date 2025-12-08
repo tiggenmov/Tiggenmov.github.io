@@ -57,6 +57,15 @@
             margin: 1rem 0;
             text-align: center;
         }
+        .error-message {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -131,21 +140,29 @@
                     For general questions only. Do not submit evidence here.
                 </p>
                 
-                <!-- SUCCESS MESSAGE (hidden by default) -->
+                <!-- SUCCESS MESSAGE -->
                 <div id="successMessage" class="success-message">
-                    <h4>✅ Message Sent Successfully!</h4>
-                    <p>Your message has been sent to tiggenmov@gmail.com. We will respond via secure channels.</p>
+                    <h4>✅ Opening Your Email Client...</h4>
+                    <p>Your email client (Gmail, Outlook, etc.) should open with message pre-filled.</p>
+                    <p>Click "Send" in your email app to send to <strong>tiggenmov@gmail.com</strong>.</p>
                 </div>
                 
-                <!-- SIMPLE GMAIL FORM -->
-                <form id="contactForm" onsubmit="sendEmail(); return false;">
+                <!-- ERROR MESSAGE -->
+                <div id="errorMessage" class="error-message">
+                    <h4>❌ Could not open email client</h4>
+                    <p>Please send email directly to: <strong>tiggenmov@gmail.com</strong></p>
+                    <p>Include your name, contact method, and message.</p>
+                </div>
+                
+                <!-- SIMPLE DIRECT FORM -->
+                <form id="contactForm">
                     <div class="form-group">
-                        <label>Your Pseudonym/Nickname *</label>
-                        <input type="text" id="name" required>
+                        <label>Your Name / Pseudonym *</label>
+                        <input type="text" id="name" required placeholder="Anonymous or nickname">
                     </div>
                     
                     <div class="form-group">
-                        <label>Your Secure Email *</label>
+                        <label>Your Email (for response) *</label>
                         <input type="email" id="email" required placeholder="your@protonmail.com">
                     </div>
                     
@@ -173,14 +190,16 @@
                     
                     <div class="form-group">
                         <label>Message *</label>
-                        <textarea id="message" rows="5" required></textarea>
+                        <textarea id="message" rows="5" required placeholder="Type your message here..."></textarea>
                     </div>
                     
-                    <button type="submit" class="btn" style="width: 100%;">Send Securely</button>
+                    <button type="button" onclick="sendDirectEmail()" class="btn" style="width: 100%;">
+                        Send Message to tiggenmov@gmail.com
+                    </button>
                 </form>
                 
                 <p style="margin-top: 1rem; font-size: 0.8rem; color: #888; text-align: center;">
-                    Note: This form uses EmailJS to send directly to tiggenmov@gmail.com. No third-party storage.
+                    This opens your email client with the message pre-filled. You need to click "Send" in your email app.
                 </p>
             </div>
         </div>
@@ -193,15 +212,8 @@
         </div>
     </footer>
 
-    <!-- EmailJS Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS with YOUR Public Key
-        (function() {
-            emailjs.init("user_your_user_id_here"); // You need to get this from EmailJS
-        })();
-        
-        function sendEmail() {
+        function sendDirectEmail() {
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -209,46 +221,60 @@
             const role = document.getElementById('role').value;
             const message = document.getElementById('message').value;
             
-            // Prepare email parameters
-            const templateParams = {
-                to_name: "Tig Gen Mov Admin",
-                from_name: name,
-                from_email: email,
-                contact_method: contactMethod,
-                role: role,
-                message: message,
-                to_email: "tiggenmov@gmail.com"  // CHANGE THIS TO YOUR REAL GMAIL
-            };
+            // Create email subject and body
+            const subject = `Tig Gen Mov Contact: ${role} - ${name}`;
+            const body = `
+Name: ${name}
+Email: ${email}
+Contact Method: ${contactMethod}
+Role: ${role}
+
+Message:
+${message}
+
+---
+Sent via Tigray Generational Movement Contact Form
+Website: https://tiggenmov.github.io
+`;
             
-            // Send email using EmailJS
-            emailjs.send('service_your_service_id', 'template_your_template_id', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    // Show success message
-                    document.getElementById('successMessage').style.display = 'block';
-                    // Reset form
+            // Encode for URL
+            const encodedSubject = encodeURIComponent(subject);
+            const encodedBody = encodeURIComponent(body);
+            
+            // Create mailto link
+            const mailtoLink = `mailto:tiggenmov@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+            
+            // Hide any previous messages
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Try to open email client
+            try {
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
                     document.getElementById('contactForm').reset();
-                    // Scroll to success message
-                    document.getElementById('successMessage').scrollIntoView({behavior: 'smooth'});
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    alert('Failed to send message. Please use tiggenmov@protonmail.com directly.');
-                });
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+                
+            } catch (error) {
+                // Show error message
+                document.getElementById('errorMessage').style.display = 'block';
+                console.error('Error:', error);
+            }
         }
         
-        // Alternative: Simple mailto fallback
-        function sendViaMailto() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const contactMethod = document.getElementById('contactMethod').value;
-            const role = document.getElementById('role').value;
-            const message = document.getElementById('message').value;
-            
-            const subject = `Tig Gen Mov Contact: ${role}`;
-            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AContact Method: ${contactMethod}%0D%0ARole: ${role}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-            
-            window.location.href = `mailto:tiggenmov@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        }
+        // Allow Ctrl+Enter to send
+        document.getElementById('message').addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                sendDirectEmail();
+            }
+        });
     </script>
 </body>
 </html>

@@ -48,6 +48,15 @@
         button.btn:hover {
             background-color: #801818;
         }
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -122,31 +131,37 @@
                     For general questions only. Do not submit evidence here.
                 </p>
                 
-                <!-- FORMSUBMIT FORM -->
-                <form action="https://formsubmit.co/tiggenmov@gmail.com" method="POST">
-                    <!-- Disable captcha -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <!-- Redirect to thank-you page (optional) -->
-                    <input type="hidden" name="_next" value="https://tiggenmov.github.io/thank-you.html">
-
+                <!-- SUCCESS MESSAGE (hidden by default) -->
+                <div id="successMessage" class="success-message">
+                    <h4>✅ Message Sent Successfully!</h4>
+                    <p>Your message has been sent to tiggenmov@gmail.com. We will respond via secure channels.</p>
+                </div>
+                
+                <!-- SIMPLE GMAIL FORM -->
+                <form id="contactForm" onsubmit="sendEmail(); return false;">
                     <div class="form-group">
                         <label>Your Pseudonym/Nickname *</label>
-                        <input type="text" name="name" required>
+                        <input type="text" id="name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label>Contact Method (Secure) *</label>
-                        <select name="contact-method" required>
+                        <label>Your Secure Email *</label>
+                        <input type="email" id="email" required placeholder="your@protonmail.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Contact Method *</label>
+                        <select id="contactMethod" required>
                             <option value="">Select one...</option>
                             <option value="secure-email">Secure Email (Proton/Tutanota)</option>
-                            <option value="signal">Signal (provide number in message)</option>
+                            <option value="signal">Signal (provide number below)</option>
                             <option value="social">Social Media DM</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
                         <label>Your Role *</label>
-                        <select name="role" required>
+                        <select id="role" required>
                             <option value="">Select one...</option>
                             <option value="supporter">Supporter/Activist</option>
                             <option value="journalist">Journalist/Researcher</option>
@@ -158,14 +173,14 @@
                     
                     <div class="form-group">
                         <label>Message *</label>
-                        <textarea name="message" rows="5" required></textarea>
+                        <textarea id="message" rows="5" required></textarea>
                     </div>
                     
                     <button type="submit" class="btn" style="width: 100%;">Send Securely</button>
                 </form>
                 
                 <p style="margin-top: 1rem; font-size: 0.8rem; color: #888; text-align: center;">
-                    Note: This form sends messages directly to tiggenmov@gmail.com via FormSubmit. Click the confirmation email sent to your inbox to activate.
+                    Note: This form uses EmailJS to send directly to tiggenmov@gmail.com. No third-party storage.
                 </p>
             </div>
         </div>
@@ -177,5 +192,63 @@
             <p class="warning">⚠️ OPSEC is not paranoia—it's survival.</p>
         </div>
     </footer>
+
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with YOUR Public Key
+        (function() {
+            emailjs.init("user_your_user_id_here"); // You need to get this from EmailJS
+        })();
+        
+        function sendEmail() {
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const contactMethod = document.getElementById('contactMethod').value;
+            const role = document.getElementById('role').value;
+            const message = document.getElementById('message').value;
+            
+            // Prepare email parameters
+            const templateParams = {
+                to_name: "Tig Gen Mov Admin",
+                from_name: name,
+                from_email: email,
+                contact_method: contactMethod,
+                role: role,
+                message: message,
+                to_email: "tiggenmov@gmail.com"  // CHANGE THIS TO YOUR REAL GMAIL
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_your_service_id', 'template_your_template_id', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    // Show success message
+                    document.getElementById('successMessage').style.display = 'block';
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({behavior: 'smooth'});
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to send message. Please use tiggenmov@protonmail.com directly.');
+                });
+        }
+        
+        // Alternative: Simple mailto fallback
+        function sendViaMailto() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const contactMethod = document.getElementById('contactMethod').value;
+            const role = document.getElementById('role').value;
+            const message = document.getElementById('message').value;
+            
+            const subject = `Tig Gen Mov Contact: ${role}`;
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AContact Method: ${contactMethod}%0D%0ARole: ${role}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+            
+            window.location.href = `mailto:tiggenmov@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
 </body>
 </html>

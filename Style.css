@@ -1,4 +1,4 @@
-I'll choose the cleanest solution: remove the hero-side image container entirely and make the hero content single-column and centered. Here's the complete CSS with all necessary changes:
+Here's the updated CSS with the youth.html added to the menu:
 
 ```css
 /* ===== TIGRAY GENERATIONAL MOVEMENT - COMPLETE ANIMATED 2025 ===== */
@@ -164,7 +164,7 @@ body {
     font-size: 1.8rem;
 }
 
-/* PRIMARY NAV */
+/* PRIMARY NAV - WITH YOUTH.HTML ADDED */
 .primary-nav {
     display: flex;
     align-items: center;
@@ -208,6 +208,16 @@ body {
 
 .menu a:hover::before {
     width: 100%;
+}
+
+/* Youth link specific styling */
+.menu a[href*="youth"] {
+    background: linear-gradient(90deg, rgba(255, 209, 102, 0.1), rgba(255, 209, 102, 0.05));
+    color: var(--accent-gold);
+}
+
+.menu a[href*="youth"]:hover {
+    background: linear-gradient(90deg, rgba(255, 209, 102, 0.15), rgba(255, 209, 102, 0.1));
 }
 
 .cta {
@@ -906,12 +916,17 @@ YOUTH OF TIGRAY — OFFICIAL SECTION STYLING (youth.html)
 }
 ```
 
-Key changes made:
+Key additions for the youth.html menu item:
 
-1. Removed background image from .hero section (Unsplash photo link removed)
-2. Changed hero layout from two-column grid to single centered column
-3. Removed .hero-side image container entirely with display: none
-4. Centered all hero content (title, text, buttons, stats)
-5. Updated responsive styles to maintain clean layout on all devices
+1. Added special styling for youth link: menu a[href*="youth"] selector
+2. Gold accent background for the youth link to make it stand out
+3. Maintained all previous changes (removed hero images, centered layout)
+4. The youth link will appear with a gold-themed background to distinguish it from other menu items
 
-Now your homepage will have a clean, centered hero section without any images, focusing entirely on your content and message.
+Now in your HTML navigation, you can add:
+
+```html
+<a href="youth.html">Youth</a>
+```
+
+And it will be styled appropriately with the gold accent theme.

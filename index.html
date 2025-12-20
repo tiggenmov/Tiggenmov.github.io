@@ -3,33 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TIG GEN MOV — Tigray Generational Movement</title>
-  <meta name="description" content="Tigray Generational Movement — Memory • Resistance • Sovereignty • For All Generations. Youth-led, action-first movement for justice and sovereignty." />
+  <title>TIG GEN MOV (Tigray:2) — Manifesto for Internal Renewal</title>
+  <meta name="description" content="The Tigray 2 Manifesto: Seven core principles for internal revolution — Sovereignty, Anti-Corruption, Justice, and Renewal." />
   
   <!-- SEO Meta Tags -->
-  <meta name="keywords" content="Tigray, genocide, justice, sovereignty, Ethiopia, Eritrea, human rights, TPLF, Tigray movement, justice for Tigray">
+  <meta name="keywords" content="Tigray 2, Tigray renewal, TIG GEN MOV, internal revolution, sovereignty, anti-corruption, Tigray manifesto, Change Generation">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
-  <meta name="author" content="Tigray Generational Movement">
+  <meta name="author" content="TIG GEN MOV (Tigray:2)">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="TIG GEN MOV — Tigray Generational Movement" />
-  <meta property="og:description" content="Memory • Resistance • Sovereignty • For All Generations — Join the generational covenant." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1518834103328-63b4d2b203b3" />
-  <meta property="og:url" content="https://tiggenmov.github.io" />
+  <meta property="og:title" content="Tigray 2 Manifesto — Internal Principles for Renewal" />
+  <meta property="og:description" content="A manifesto for the Change Generation. Seven principles to break with corruption and build sovereign power for the people." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" />
+  <meta property="og:url" content="https://tiggenmov.github.io/manifesto.html" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tigray Generational Movement">
-  <meta name="twitter:description" content="Justice for Tigray. Sovereignty for our future.">
-  
-  <!-- Google Search Console Verification -->
-  <meta name="google-site-verification" content="b7MW3wXcaMaEr9hMFkZfUbVA2LyCm3MJgVLb4A-uN08" />
-  
-  <!-- Sitemap -->
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-  
-  <!-- Canonical -->
-  <link rel="canonical" href="https://tiggenmov.github.io">
   
   <!-- Styles & Fonts -->
   <link rel="stylesheet" href="style.css" />
@@ -38,31 +26,137 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- Manifesto-specific CSS -->
+  <style>
+    /* Manifesto Hero */
+    .manifesto-hero {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+    
+    .manifesto-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffd700, #ffed4e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .manifesto-badge {
+      display: inline-block;
+      background: #b22222;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      margin: 1rem 0;
+      font-size: 1.1rem;
+    }
+    
+    /* Manifesto Container */
+    .manifesto-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    /* Declaration Box */
+    .declaration-box {
+      border-left: 6px solid #b22222;
+      padding: 2rem;
+      margin: 3rem 0;
+      background: #fff5f5;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #444;
+    }
+    
+    /* Principle Cards */
+    .principle-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      border-top: 4px solid #b22222;
+    }
+    
+    .principle-number {
+      background: #b22222;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+    
+    .principle-card h3 {
+      color: #b22222;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    
+    .principle-points {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .principle-points li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .principle-points li:before {
+      content: "•";
+      color: #b22222;
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+    }
+    
+    /* Internal Commitment */
+    .commitment-section {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: white;
+      padding: 3rem;
+      border-radius: 12px;
+      margin: 4rem 0;
+      text-align: center;
+    }
+    
+    /* Signature Section */
+    .signature-section {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      margin: 3rem 0;
+    }
+    
+    @media (max-width: 768px) {
+      .manifesto-hero h1 { font-size: 2.5rem; }
+      .principle-card { padding: 1.5rem; }
+      .declaration-box { padding: 1.5rem; }
+    }
+  </style>
 </head>
-<body>
-  <!-- Particle Background -->
-  <div id="particles-js"></div>
-  <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#b22222" },
-        opacity: { value: 0.5, random: true },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: "#ffd700", opacity: 0.2, width: 1 },
-        move: { enable: true, speed: 2, direction: "none" }
-      }
-    });
-  </script>
 
+<body>
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container header-grid">
       <a class="brand" href="/">
-        <!-- SVG Logo -->
-        <svg class="logo-svg" viewBox="0 0 600 300" width="200" height="60" aria-label="Tigray Generational Movement">
+        <!-- Updated SVG Logo for Tigray:2 -->
+        <svg class="logo-svg" viewBox="0 0 600 300" width="200" height="60" aria-label="TIG GEN MOV (Tigray:2)">
           <defs>
             <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
@@ -81,7 +175,7 @@
                 font-size="60" 
                 font-weight="800" 
                 fill="url(#goldGradient)">
-            TIG GEN MOV
+            TIGRAY 2
           </text>
           
           <text x="300" y="180" text-anchor="middle" 
@@ -89,13 +183,16 @@
                 font-size="28" 
                 font-weight="600" 
                 fill="#ffffff">
-            OUR FUTURE, OUR WILL, OUR ACTION
+            INTERNAL RENEWAL
           </text>
           
-          <line x1="150" y1="140" x2="450" y2="140" 
-                stroke="#ffffff" 
-                stroke-width="3" 
-                stroke-linecap="round"/>
+          <text x="300" y="220" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="18" 
+                font-weight="400" 
+                fill="#ffffff">
+            TIG GEN MOV
+          </text>
         </svg>
       </a>
 
@@ -106,196 +203,235 @@
 
         <ul id="primary-menu" class="menu">
           <li><a href="/">Home</a></li>
-          <li><a href="truth.html">Truth & Archive</a></li>
+          <li><a href="manifesto.html" class="active">Tigray 2 Manifesto</a></li>
           <li><a href="vision.html">Vision & Future</a></li>
           <li><a href="action.html">Take Action</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="action.html" class="cta">Join Movement</a></li>
+          <li><a href="truth.html">Truth Archive</a></li>
+          <li><a href="action.html" class="cta">Sign Manifesto</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero" role="banner" aria-label="Main banner">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <!-- Main Title with Motto -->
-        <h2 class="main-title">
-          <span class="logo-text">TIG GEN MOV</span>
-          <span class="divider"> — </span>
-          <span class="motto">OUR FUTURE, OUR WILL, OUR ACTION</span>
-        </h2>
-        
-        <!-- Motto Image -->
-        <div class="motto-image">
-          <img src="https://images.unsplash.com/photo-1518834103328-63b4d2b203b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Tigray Generational Movement - United for Justice" />
-        </div>
-        
-        <p class="kicker">TIGRAY • GENERATIONAL • MOVEMENT</p>
-        <h1 class="hero-title">The Generation of Change</h1>
-        <p class="hero-lead">We hold memory. We organize resistance. We build sovereignty. Youth-led. Future-focused. For all generations of Tigrayans.</p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="action.html">
-            <i class="fas fa-fist-raised"></i> Take Action
-          </a>
-          <a class="btn outline" href="vision.html">
-            <i class="fas fa-eye"></i> Our Vision
-          </a>
-          <a class="btn hollow" href="truth.html">
-            <i class="fas fa-archive"></i> Explore Archive
-          </a>
-        </div>
-
-        <div class="hero-stats" aria-hidden="true">
-          
-        </div>
-      </div>
-
-      <!-- Hero Side Element for Parallax -->
-      <figure class="hero-side" aria-hidden="true">
-        <div class="hero-side-content">
-          <h3>Memory • Resistance • Sovereignty</h3>
-          <p>For All Generations</p>
-          <p style="margin-top: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
-            <i class="fas fa-shield-alt"></i> Secure Platform<br>
-            <i class="fas fa-globe"></i> Global Network<br>
-            <i class="fas fa-history"></i> Historical Archive
-          </p>
-        </div>
-      </figure>
-    </div>
-  </section>
-
-  <!-- Pillars Section -->
-  <section id="pillars" class="pillars">
+  <!-- Manifesto Hero -->
+  <section class="manifesto-hero">
     <div class="container">
-      <h2 class="section-title">Our Three Pillars</h2>
-      <div class="card-grid">
-        <article class="card">
-          <div class="card-icon"><i class="fas fa-book"></i></div>
-          <h3>Memory</h3>
-          <p>We collect testimonies, documents, and open-source evidence so the truth is kept for generations. Digital archives protect our history from erasure.</p>
-          <a href="truth.html" class="readmore">Explore Archive →</a>
-        </article>
-
-        <article class="card">
-          <div class="card-icon"><i class="fas fa-fist-raised"></i></div>
-          <h3>Resistance</h3>
-          <p>Digital activism, community resilience, and international advocacy — we mobilize everywhere. From social media to streets, we maintain the will to be free.</p>
-          <a href="action.html" class="readmore">Join Resistance →</a>
-        </article>
-
-        <article class="card">
-          <div class="card-icon"><i class="fas fa-flag"></i></div>
-          <h3>Sovereignty</h3>
-          <p>Education, local institutions, and sustainable reconstruction — we build lasting autonomy. Tigrayans controlling Tigray's future is our ultimate goal.</p>
-          <a href="vision.html" class="readmore">Build Sovereignty →</a>
-        </article>
-      </div>
+      <div class="manifesto-badge">FOR THE CHANGE GENERATION</div>
+      <h1>TIGRAY 2 MANIFESTO</h1>
+      <p class="hero-lead" style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.2rem;">
+        Seven principles to break with corruption, restore sovereignty, and build our future from within.
+      </p>
+      <a href="#principles" class="btn primary" style="margin-right: 1rem;">
+        <i class="fas fa-scroll"></i> Read Principles
+      </a>
+      <a href="#sign" class="btn outline">
+        <i class="fas fa-signature"></i> Sign Now
+      </a>
     </div>
   </section>
 
-  <!-- About / Mission -->
-  <section class="about">
-    <div class="container about-grid">
-      <div class="about-media">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Tigray youth united for sovereignty" />
+  <!-- Manifesto Content -->
+  <main class="manifesto-container">
+    <!-- Preamble -->
+    <section id="preamble">
+      <h2 style="text-align: center; color: #b22222; margin-bottom: 2rem;">PREAMBLE: OUR INTERNAL REALITY</h2>
+      
+      <div class="declaration-box">
+        <p>The Tigrayan people have endured a system that promised liberation but delivered betrayal.</p>
+        <p>A corrupt and self-serving political machinery — "The System" — prioritized its survival over the people's survival, its wealth over the people's poverty, and its power over the people's voice.</p>
+        <p>We, the Change Generation, are the children of this betrayal. This is not about external actors. This is about taking radical responsibility for our own house.</p>
+        <p style="font-weight: 800; margin-top: 1.5rem; font-style: normal;">TIGRAY 2 IS OUR INTERNAL REVOLUTION. IT BEGINS WITH US.</p>
       </div>
-      <div class="about-copy">
-        <h2>We Are the Unbroken Chain</h2>
-        <p>We are a coalition of young Tigrayans reclaiming the narrative. We combine archival truth-work with grassroots organizing and institution building. Our work is pragmatic, secure, and rooted in dignity.</p>
-        <p>This movement spans generations until justice is served and sovereignty achieved. We are the bridge between past suffering and future freedom.</p>
-        <div class="btn-row">
-          <a class="btn primary hollow" href="truth.html">
-            <i class="fas fa-database"></i> Explore the Archive
-          </a>
-          <a class="btn outline" href="contact.html">
-            <i class="fas fa-lock"></i> Contact Securely
-          </a>
+    </section>
+
+    <!-- Seven Principles -->
+    <section id="principles">
+      <h2 style="text-align: center; color: #b22222; margin: 4rem 0 2rem;">THE SEVEN CORE PRINCIPLES</h2>
+      
+      <!-- Principle 1 -->
+      <article class="principle-card">
+        <div class="principle-number">1</div>
+        <h3>THE PEOPLE ARE THE SOVEREIGN</h3>
+        <ul class="principle-points">
+          <li>The absolute source of power and legitimacy is the Tigrayan people.</li>
+          <li>The System is a temporary servant, not a master.</li>
+          <li>Any power not freely granted by the people is theft.</li>
+        </ul>
+      </article>
+
+      <!-- Principle 2 -->
+      <article class="principle-card">
+        <div class="principle-number">2</div>
+        <h3>UNCONDITIONAL BREAK WITH CORRUPTION</h3>
+        <ul class="principle-points">
+          <li>No secret deals, no elite cartels, no politics of lies.</li>
+          <li>No permanent excuse of "struggle" to justify corruption or authoritarianism.</li>
+          <li>The sacrifice of youth for elite gain ends permanently.</li>
+        </ul>
+      </article>
+
+      <!-- Principle 3 -->
+      <article class="principle-card">
+        <div class="principle-number">3</div>
+        <h3>THE ONE-TIME DOOR – FORGIVENESS WITHOUT REVENGE</h3>
+        <ul class="principle-points">
+          <li>A historic, one-time offer to break the cycle of violence.</li>
+          <li>Full surrender of corrupt power earns forgiveness.</li>
+          <li>No revenge, no lynching, no collective punishment.</li>
+          <li>Betrayal repeated means the door closes forever.</li>
+        </ul>
+      </article>
+
+      <!-- Principle 4 -->
+      <article class="principle-card">
+        <div class="principle-number">4</div>
+        <h3>JUSTICE AND ACCOUNTABILITY</h3>
+        <ul class="principle-points">
+          <li>Accountability for corruption and abuse of trust is non-negotiable.</li>
+          <li>Truth about internal crimes must be publicly established.</li>
+          <li>No future can be built on impunity.</li>
+        </ul>
+      </article>
+
+      <!-- Principle 5 -->
+      <article class="principle-card">
+        <div class="principle-number">5</div>
+        <h3>POWER WITH LIMITS</h3>
+        <ul class="principle-points">
+          <li>Strict term limits for all leadership positions.</li>
+          <li>Independent judiciary and anti-corruption institutions.</li>
+          <li>Full transparency of public resources.</li>
+          <li>People's right to recall failed leaders.</li>
+        </ul>
+      </article>
+
+      <!-- Principle 6 -->
+      <article class="principle-card">
+        <div class="principle-number">6</div>
+        <h3>THE CHANGE GENERATION LEADS</h3>
+        <ul class="principle-points">
+          <li>Youth, professionals, displaced people, and citizens are the architects.</li>
+          <li>New ideas, new faces, real competition.</li>
+          <li>Dissent is patriotic. Debate is strength.</li>
+        </ul>
+      </article>
+
+      <!-- Principle 7 -->
+      <article class="principle-card">
+        <div class="principle-number">7</div>
+        <h3>LIFE AND DIGNITY ARE SACRED</h3>
+        <ul class="principle-points">
+          <li>No political goal justifies civilian suffering.</li>
+          <li>Protecting life, home, and future is the highest priority.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Internal Commitment -->
+    <section class="commitment-section">
+      <h2 style="color: #ffd700; margin-bottom: 2rem;">OUR INTERNAL COMMITMENT</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left;">
+        <div>
+          <h4 style="color: #ffd700;"><i class="fas fa-peace"></i> NON-VIOLENCE</h4>
+          <p>We will not become what we oppose.</p>
+        </div>
+        <div>
+          <h4 style="color: #ffd700;"><i class="fas fa-bullhorn"></i> COURAGE</h4>
+          <p>We speak truth to internal power.</p>
+        </div>
+        <div>
+          <h4 style="color: #ffd700;"><i class="fas fa-eye"></i> CLARITY</h4>
+          <p>We clean our house first.</p>
+        </div>
+        <div>
+          <h4 style="color: #ffd700;"><i class="fas fa-hands"></i> RESPONSIBILITY</h4>
+          <p>Our future is in our hands.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Latest / CTA -->
-  <section class="latest">
-    <div class="container">
-      <h2 class="section-title">Latest from the Movement</h2>
-      <div class="update">
-        <h4><i class="fas fa-bullhorn"></i> 📢 The Launch of Tig Gen Mov</h4>
-        <p>We declare a new epoch — a generational covenant for justice and freedom. Join the movement and help build Tigray's sovereign future. 2025 is our year of organized resistance and evidence collection.</p>
-        <a class="readmore" href="vision.html">
-          <i class="fas fa-arrow-right"></i> Read the Full Vision →
-        </a>
-      </div>
-      <div class="update" style="margin-top: 20px;">
-        <h4><i class="fas fa-calendar-check"></i> 🎯 2025 Roadmap Released</h4>
-        <p>Our detailed 2025-2035 sovereignty blueprint is now available. Phase 1 (2025-2027): Secure Foundation. Phase 2 (2028-2030): Economic Independence. Phase 3 (2031-2033): Political Self-Determination.</p>
-        <a class="readmore" href="future.html">
-          <i class="fas fa-chart-line"></i> View 10-Year Plan →
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- Signature Section -->
+    <section id="sign" class="signature-section">
+      <h2 style="color: #b22222; margin-bottom: 1rem;">STAND WITH TIGRAY 2</h2>
+      <p style="max-width: 600px; margin: 0 auto 2rem; color: #555;">
+        Support the internal renewal of Tigray. Add your voice to the Change Generation.
+      </p>
+      
+      <!-- Action Network Embed -->
+      <link href='https://actionnetwork.org/css/style-embed-v3.css' rel='stylesheet' type='text/css' />
+      <script src='https://actionnetwork.org/widgets/v5/petition/support-the-tigray-2-manifesto-for-internal-renewal?format=js&source=widget'></script>
+      <div id='can-petition-area-support-the-tigray-2-manifesto-for-internal-renewal' style='width: 100%; max-width: 600px; margin: 0 auto;'></div>
+      
+      <p style="margin-top: 2rem; color: #666; font-style: italic;">
+        Tigray 2 begins now. It begins with us.
+      </p>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <div class="brand-col">
-        <!-- Footer Logo Version -->
-        <svg class="footer-logo" viewBox="0 0 400 200" width="180" height="90" aria-label="Tigray Generational Movement">
+        <svg class="footer-logo" viewBox="0 0 400 200" width="180" height="90" aria-label="TIG GEN MOV (Tigray:2)">
           <rect x="0" y="0" width="400" height="200" rx="10" fill="#b22222"/>
           <text x="200" y="80" text-anchor="middle" 
                 font-family="Montserrat, sans-serif" 
                 font-size="36" 
                 font-weight="800" 
                 fill="#ffd700">
-            TIG GEN MOV
+            TIGRAY 2
           </text>
           <text x="200" y="130" text-anchor="middle" 
                 font-family="'Source Sans 3', sans-serif" 
                 font-size="16" 
                 font-weight="600" 
                 fill="#ffffff">
-            OUR FUTURE, OUR WILL, OUR ACTION
+            INTERNAL RENEWAL
           </text>
         </svg>
         <p style="color: var(--muted); margin-top: 10px; font-size: 0.9rem;">
-          Memory • Resistance • Sovereignty • For All Generations
+          A Manifesto for the Change Generation
         </p>
       </div>
 
       <nav class="footnav" aria-label="Footer links">
         <a href="/"><i class="fas fa-home"></i> Home</a>
-        <a href="truth.html"><i class="fas fa-archive"></i> Truth & Archive</a>
+        <a href="manifesto.html" class="active"><i class="fas fa-scroll"></i> Tigray 2 Manifesto</a>
         <a href="vision.html"><i class="fas fa-eye"></i> Vision & Future</a>
         <a href="action.html"><i class="fas fa-fist-raised"></i> Take Action</a>
-        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-        <a href="resources.html"><i class="fas fa-tools"></i> Resources</a>
-        <a href="manifesto.html"><i class="fas fa-scroll"></i> Manifesto</a>
+        <a href="truth.html"><i class="fas fa-archive"></i> Truth Archive</a>
       </nav>
 
       <div class="legal">
-        <p>© <span id="currentYear">2025</span> Tigray Generational Movement</p>
+        <p>© <span id="currentYear">2025</span> TIG GEN MOV (Tigray:2)</p>
         <p style="color: var(--muted); font-size: 0.9rem; margin-top: 5px;">
           <i class="fas fa-shield-alt"></i> Secure Platform<br>
-          <i class="fas fa-user-secret"></i> Anonymous Hosting<br>
-          <i class="fas fa-globe"></i> Global Network
+          <i class="fas fa-user-secret"></i> Privacy First<br>
+          <i class="fas fa-globe"></i> Global Movement
         </p>
         <p class="security">⚠️ Stay Secure. Use VPN. Share Wisely.</p>
         <p style="color: var(--muted); font-size: 0.8rem; margin-top: 10px;">
-          #TigGenMov | #JusticeIsGenerational | #OurEpoch
+          #Tigray2 #ChangeGeneration #InternalRenewal
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top Button (Added by JavaScript) -->
-  
-  <!-- JavaScript Files -->
+  <!-- JavaScript -->
   <script src="main.js"></script>
-  <script src="animations.js"></script>
+  <script>
+    // Update current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Make manifesto cards interactive
+    document.querySelectorAll('.principle-card').forEach(card => {
+      card.addEventListener('click', function() {
+        this.style.transform = 'translateY(-5px)';
+        setTimeout(() => {
+          this.style.transform = 'translateY(0)';
+        }, 200);
+      });
+    });
+  </script>
 </body>
 </html>

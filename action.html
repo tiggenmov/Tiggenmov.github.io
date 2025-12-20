@@ -1,96 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Take Action | Tig Gen Mov</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TIGRAY 2 — Take Action</title>
+  <meta name="description" content="Join the movement. Take action for Tigray 2: Sign petitions, organize, donate, and support the Change Generation." />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="Tigray action, support Tigray, donate Tigray, Tigray petitions, join movement">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TIGRAY 2 Movement">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="TIGRAY 2 — Take Action" />
+  <meta property="og:description" content="Join the Change Generation. Take concrete action for Tigray's renewal." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80" />
+  <meta property="og:url" content="https://tiggenmov.github.io/action.html" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Page-specific CSS -->
+  <style>
+    /* Action Hero */
+    .action-hero {
+      min-height: 70vh;
+      padding: 120px 0 80px;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+                  url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      animation: fadeInUp 1.2s ease-out;
+    }
+    
+    .action-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      background: linear-gradient(90deg, var(--accent-gold), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    
+    /* Action Container */
+    .action-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+    
+    /* Action Grid */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    
+    .action-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      transition: 0.4s ease;
+      animation: cardFloat 6s ease-in-out infinite;
+      text-align: center;
+    }
+    
+    .action-card:nth-child(1) { animation-delay: 0s; }
+    .action-card:nth-child(2) { animation-delay: 0.2s; }
+    .action-card:nth-child(3) { animation-delay: 0.4s; }
+    .action-card:nth-child(4) { animation-delay: 0.6s; }
+    
+    .action-card:hover {
+      transform: translateY(-12px);
+      border-color: var(--accent-red);
+      box-shadow: 0 20px 60px rgba(178,34,34,0.25);
+    }
+    
+    .action-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      background: linear-gradient(90deg, var(--accent-red), var(--accent-red-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .action-card h3 {
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+    }
+    
+    /* Donation Section */
+    .donation-section {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      padding: 3rem;
+      border-radius: 12px;
+      margin: 4rem 0;
+      text-align: center;
+    }
+    
+    .donation-options {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    
+    .donation-option {
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      min-width: 120px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .donation-option:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--accent-gold);
+      transform: scale(1.05);
+    }
+    
+    /* Signature Section */
+    .signature-action {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 12px;
+      margin: 4rem 0;
+    }
+    
+    /* Resources */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    
+    .resource-item {
+      background: rgba(255,255,255,0.02);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-gold);
+      transition: all 0.3s ease;
+    }
+    
+    .resource-item:hover {
+      background: rgba(255,255,255,0.05);
+      transform: translateX(5px);
+    }
+    
+    @media (max-width: 768px) {
+      .action-hero h1 { font-size: 2.2rem; }
+      .action-container { padding: 2rem 1rem; }
+      .action-grid { grid-template-columns: 1fr; }
+      .donation-options { flex-direction: column; }
+      .donation-option { min-width: 100%; }
+    }
+  </style>
 </head>
+
 <body>
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">TIG GEN MOV</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="truth.html">Truth & Archive</a>
-                <a href="vision.html">Vision & Future</a>
-                <a href="action.html">Take Action</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </nav>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="/">
+        <svg class="logo-svg" viewBox="0 0 600 300" width="200" height="60" aria-label="TIGRAY 2">
+          <defs>
+            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#b22222;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          
+          <rect x="0" y="0" width="600" height="300" rx="20" fill="url(#redGradient)"/>
+          
+          <text x="300" y="110" text-anchor="middle" 
+                font-family="Montserrat, sans-serif" 
+                font-size="60" 
+                font-weight="800" 
+                fill="url(#goldGradient)">
+            TIGRAY 2
+          </text>
+          
+          <text x="300" y="180" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="28" 
+                font-weight="600" 
+                fill="#ffffff">
+            INTERNAL RENEWAL
+          </text>
+        </svg>
+      </a>
 
-    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1551135049-8a33b2fb2d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
-        <div class="container">
-            <h1>TAKE ACTION</h1>
-            <p class="tagline">Your Role in the Generational Movement</p>
-            <p class="mission">Justice is not a spectator sport. Sovereignty is not a wish. Both require your conscious, strategic action. Choose your role.</p>
-        </div>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button id="hambtn" class="hambtn" aria-expanded="false" aria-controls="primary-menu" title="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul id="primary-menu" class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="youth.html">Youth</a></li>
+          <li><a href="truth.html">Truth Archive</a></li>
+          <li><a href="vision.html">Vision & Future</a></li>
+          <li><a href="action.html" class="active">Take Action</a></li>
+          <li><a href="manifesto.html#sign" class="cta">Sign Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Action Hero -->
+  <section class="action-hero">
+    <div class="container">
+      <h1>TAKE ACTION</h1>
+      <p class="hero-lead" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">
+        Join the Change Generation. Your action today builds Tigray's sovereign tomorrow.
+      </p>
+    </div>
+  </section>
+
+  <!-- Action Content -->
+  <main class="action-container">
+    <!-- Introduction -->
+    <section style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Every Action Matters</h2>
+      <p style="color: var(--muted); max-width: 700px; margin: 0 auto; line-height: 1.8;">
+        Change doesn't happen by watching. It happens through consistent, collective action. 
+        Whether you can donate, organize, share information, or contribute skills—every effort counts 
+        toward building a sovereign, just Tigray.
+      </p>
     </section>
 
-    <section class="pillars">
-        <div class="container">
-            <h2>Four Paths of Action</h2>
-            
-            <div class="pillar-grid">
-                <div class="pillar">
-                    <h3>🔄 AMPLIFY</h3>
-                    <p><strong>For Everyone</strong></p>
-                    <ul style="margin-top: 1rem; padding-left: 1.2rem;">
-                        <li>Share our content with #TigGenMov</li>
-                        <li>Translate materials into your language</li>
-                        <li>Wear symbolic colors (black/red/white)</li>
-                        <li>Change your social media profile to raise awareness</li>
-                    </ul>
-                </div>
-                
-                <div class="pillar">
-                    <h3>📢 ADVOCATE</h3>
-                    <p><strong>For Diaspora & Allies</strong></p>
-                    <ul style="margin-top: 1rem; padding-left: 1.2rem;">
-                        <li>Contact your representatives weekly</li>
-                        <li>Demand Magnitsky sanctions on perpetrators</li>
-                        <li>Push for ICC referrals</li>
-                        <li>Organize local vigils/protests</li>
-                    </ul>
-                </div>
-                
-                <div class="pillar">
-                    <h3>💎 SUSTAIN</h3>
-                    <p><strong>For Those Inside Tigray</strong></p>
-                    <ul style="margin-top: 1rem; padding-left: 1.2rem;">
-                        <li>Document and securely archive evidence</li>
-                        <li>Build local community resilience networks</li>
-                        <li>Practice digital security (VPN, encryption)</li>
-                        <li>Preserve cultural knowledge and history</li>
-                    </ul>
-                </div>
-                
-                <div class="pillar">
-                    <h3>🏗️ BUILD</h3>
-                    <p><strong>For Professionals & Experts</strong></p>
-                    <ul style="margin-top: 1rem; padding-left: 1.2rem;">
-                        <li>Lawyers: Work on legal cases</li>
-                        <li>Doctors: Document medical evidence</li>
-                        <li>Engineers: Plan reconstruction</li>
-                        <li>Teachers: Develop liberation curriculum</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: #f0f8ff; border-radius: 8px;">
-                <h3 style="color: #b22222; margin-bottom: 1rem;">Weekly Action Alert</h3>
-                <p><strong>This Week:</strong> Every supporter emails their EU representative demanding suspension of aid to Ethiopia until Tigray accounts are unfrozen.</p>
-                <a href="contact.html" class="btn">Get Detailed Instructions</a>
-            </div>
-        </div>
+    <!-- Action Grid -->
+    <section class="action-grid">
+      <div class="action-card">
+        <div class="action-icon"><i class="fas fa-signature"></i></div>
+        <h3>Sign & Share</h3>
+        <p style="color: var(--muted); margin-bottom: 1.5rem;">
+          Sign the Tigray 2 Manifesto and share it with your network. Every signature amplifies our collective voice.
+        </p>
+        <a class="btn primary" href="manifesto.html#sign" style="width: 100%;">
+          Sign Manifesto
+        </a>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-icon"><i class="fas fa-users"></i></div>
+        <h3>Organize Locally</h3>
+        <p style="color: var(--muted); margin-bottom: 1.5rem;">
+          Start or join local TIGRAY 2 chapters. Organize discussions, awareness campaigns, and community actions.
+        </p>
+        <a class="btn outline" href="#organize" style="width: 100%;">
+          Start Organizing
+        </a>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-icon"><i class="fas fa-globe"></i></div>
+        <h3>Amplify Online</h3>
+        <p style="color: var(--muted); margin-bottom: 1.5rem;">
+          Share content on social media. Use hashtags #Tigray2 and #ChangeGeneration to spread awareness.
+        </p>
+        <a class="btn hollow" href="#amplify" style="width: 100%;">
+          Amplify Voices
+        </a>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-icon"><i class="fas fa-file-alt"></i></div>
+        <h3>Document & Submit</h3>
+        <p style="color: var(--muted); margin-bottom: 1.5rem;">
+          Contribute to the Truth Archive. Document evidence and testimonies securely for justice.
+        </p>
+        <a class="btn primary" href="truth.html" style="width: 100%;">
+          Submit Evidence
+        </a>
+      </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Tigray Generational Movement. Action defeats despair.</p>
-            <p class="warning">⚠️ Act wisely. Act securely. Act collectively.</p>
+    <!-- Donation Section -->
+    <section class="donation-section">
+      <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Support Financially</h2>
+      <p style="color: var(--muted); margin-bottom: 1.5rem;">
+        Your financial support enables our work: organizing, documenting truth, building infrastructure, 
+        and sustaining the movement for the long term.
+      </p>
+      
+      <div class="donation-options">
+        <div class="donation-option">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">$25</h4>
+          <p style="color: var(--muted); font-size: 0.9rem;">Supports digital operations</p>
         </div>
-    </footer>
+        
+        <div class="donation-option">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">$50</h4>
+          <p style="color: var(--muted); font-size: 0.9rem;">Funds truth documentation</p>
+        </div>
+        
+        <div class="donation-option">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">$100</h4>
+          <p style="color: var(--muted); font-size: 0.9rem;">Supports youth programs</p>
+        </div>
+        
+        <div class="donation-option">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Custom</h4>
+          <p style="color: var(--muted); font-size: 0.9rem;">Any amount helps</p>
+        </div>
+      </div>
+      
+      <a class="btn primary" href="#donate" style="margin-top: 2rem;">
+        <i class="fas fa-donate"></i> Donate Securely
+      </a>
+    </section>
+
+    <!-- Signature Action -->
+    <section class="signature-action">
+      <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Sign the Tigray 2 Manifesto</h2>
+      <p style="color: var(--muted); margin-bottom: 1.5rem;">
+        Add your voice to the Change Generation. Signing the manifesto publicly declares your commitment 
+        to Tigray's internal renewal.
+      </p>
+      <a class="btn primary" href="manifesto.html#sign">
+        <i class="fas fa-signature"></i> Sign Now
+      </a>
+    </section>
+
+    <!-- Action Resources -->
+    <section id="resources">
+      <h2 style="text-align: center; color: var(--accent-gold); margin: 4rem 0 2rem;">Action Resources</h2>
+      
+      <div class="resources-grid">
+        <div class="resource-item">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Organizing Guide</h4>
+          <p style="color: var(--muted); font-size: 0.9rem;">How to start and run local TIGRAY 2 chapters securely.</p>
+        </div>
+        
+        <div class="resource-item">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Social Media Toolkit</h4>
+          <p style="color: var(--muted); font-size: 0.9rem;">Graphics, hashtags, and messaging guides for online action.</p>
+        </div>
+        
+        <div class="resource-item">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Security Protocols</h4>
+          <p style="color: var(--muted); font-size: 0.9rem;">How to organize and communicate safely.</p>
+        </div>
+        
+        <div class="resource-item">
+          <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Educational Materials</h4>
+          <p style="color: var(--muted); font-size: 0.9rem;">Presentations and reading lists for awareness campaigns.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="text-align: center; margin: 4rem 0;">
+      <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem;">The Time for Action is Now</h2>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto 2rem;">
+        Change begins with a single action. Choose yours today and join thousands in the Change Generation.
+      </p>
+      <div class="btn-row" style="justify-content: center; gap: 1rem;">
+        <a class="btn primary" href="manifesto.html#sign">
+          <i class="fas fa-signature"></i> Sign Manifesto
+        </a>
+        <a class="btn outline" href="vision.html">
+          <i class="fas fa-eye"></i> See Our Vision
+        </a>
+        <a class="btn hollow" href="truth.html">
+          <i class="fas fa-archive"></i> Explore Archive
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="brand-col">
+        <svg class="footer-logo" viewBox="0 0 400 200" width="180" height="90" aria-label="TIGRAY 2">
+          <rect x="0" y="0" width="400" height="200" rx="10" fill="#b22222"/>
+          <text x="200" y="80" text-anchor="middle" 
+                font-family="Montserrat, sans-serif" 
+                font-size="36" 
+                font-weight="800" 
+                fill="#ffd700">
+            TIGRAY 2
+          </text>
+          <text x="200" y="130" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="16" 
+                font-weight="600" 
+                fill="#ffffff">
+            INTERNAL RENEWAL
+          </text>
+        </svg>
+        <p style="color: var(--muted); margin-top: 10px; font-size: 0.9rem;">
+          Memory • Resistance • Sovereignty • For All Generations
+        </p>
+      </div>
+
+      <nav class="footnav" aria-label="Footer links">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="manifesto.html"><i class="fas fa-scroll"></i> Manifesto</a>
+        <a href="action.html" class="active"><i class="fas fa-fist-raised"></i> Take Action</a>
+        <a href="youth.html"><i class="fas fa-users"></i> Youth</a>
+        <a href="truth.html"><i class="fas fa-archive"></i> Truth Archive</a>
+        <a href="vision.html"><i class="fas fa-eye"></i> Vision</a>
+      </nav>
+
+      <div class="legal">
+        <p>© <span id="currentYear">2025</span> TIGRAY 2 Movement</p>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 5px;">
+          <i class="fas fa-shield-alt"></i> Secure Actions<br>
+          <i class="fas fa-user-secret"></i> Privacy First<br>
+          <i class="fas fa-globe"></i> Global Movement
+        </p>
+        <p class="security">⚠️ Stay Secure. Use VPN. Share Wisely.</p>
+        <p style="color: var(--muted); font-size: 0.8rem; margin-top: 10px;">
+          #TakeAction #Tigray2 #ChangeGeneration
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script>
+    // Update current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

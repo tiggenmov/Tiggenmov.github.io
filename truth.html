@@ -1,109 +1,405 @@
-<!DOCTYPE html>    
-<html lang="en">    
-<head>    
-    <meta charset="UTF-8">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>Truth & Archive | Tig Gen Mov</title>    
-    <link rel="stylesheet" href="style.css">    
-</head>    
-<body>    
-    <nav>    
-        <div class="container">    
-            <a href="index.html" class="logo">TIG GEN MOV</a>    
-            <div class="nav-links">    
-                <a href="index.html">Home</a>    
-                <a href="truth.html">Truth & Archive</a>    
-                <a href="vision.html">Vision & Future</a>    
-                <a href="action.html">Take Action</a>    
-                <a href="contact.html">Contact</a>    
-            </div>    
-        </div>    
-    </nav>    
-     
-    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">    
-        <div class="container">    
-            <h1>TRUTH & ARCHIVE</h1>    
-            <p class="tagline">The evidence will outlive the erasure.</p>    
-            <p class="mission">This is the living digital archive of the crimes committed against the people of Tigray. Here, testimony meets documentation to build an unassailable record for history and justice.</p>    
-        </div>    
-    </section>    
-     
-    <section class="pillars">    
-        <div class="container">    
-            <h2>The Evidence Dossiers</h2>    
-            <div class="pillar-grid">    
-                <div class="pillar">    
-                    <h3>THE SIEGE</h3>    
-                    <p>Documented proof of the deliberate blockade of telecommunications, banking, food, fuel, and medicine—a weapon of war against civilians.</p>    
-                    <p><strong>Status:</strong> Ongoing investigation</p>    
-                </div>    
-                <div class="pillar">    
-                    <h3>MASS ATROCITIES</h3>    
-                    <p>Compiled testimonies and forensic reports of massacres, sexual violence, and systematic torture by multiple armed actors.</p>    
-                    <p><strong>Status:</strong> Being prepared for ICC</p>    
-                </div>    
-                <div class="pillar">    
-                    <h3>DESTRUCTION OF HERITAGE</h3>    
-                    <p>Satellite imagery and ground reports showing the deliberate targeting of churches, schools, hospitals, and historical sites.</p>    
-                    <p><strong>Status:</strong> UNESCO alert filed</p>    
-                </div>    
-            </div>    
-            <div style="text-align: center; margin-top: 3rem;">    
-                <p><em>This archive is protected through decentralized and encrypted storage. The truth cannot be deleted.</em></p>    
-                <a href="contact.html" class="btn">Submit Evidence (Secure)</a>    
-            </div>    
-        </div>    
-    </section>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TIGRAY 2 — Truth Archive</title>
+  <meta name="description" content="Documenting truth for justice. The Tigray 2 Truth Archive preserves evidence, testimonies, and history." />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="Tigray truth, Tigray archive, genocide evidence, human rights documentation, Tigray history">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TIGRAY 2 Movement">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="TIGRAY 2 — Truth Archive" />
+  <meta property="og:description" content="Preserving truth for justice. Documenting evidence and testimonies for future generations." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=80" />
+  <meta property="og:url" content="https://tiggenmov.github.io/truth.html" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Page-specific CSS -->
+  <style>
+    /* Truth Hero */
+    .truth-hero {
+      min-height: 70vh;
+      padding: 120px 0 80px;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+                  url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      animation: fadeInUp 1.2s ease-out;
+    }
+    
+    .truth-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      background: linear-gradient(90deg, var(--accent-gold), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    
+    /* Archive Container */
+    .archive-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+    
+    /* Archive Statement */
+    .archive-statement {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--primary-red);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    /* Document Grid */
+    .document-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    
+    .document-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      transition: 0.4s ease;
+      animation: cardFloat 6s ease-in-out infinite;
+    }
+    
+    .document-card:nth-child(1) { animation-delay: 0s; }
+    .document-card:nth-child(2) { animation-delay: 0.2s; }
+    .document-card:nth-child(3) { animation-delay: 0.4s; }
+    .document-card:nth-child(4) { animation-delay: 0.6s; }
+    
+    .document-card:hover {
+      transform: translateY(-12px);
+      border-color: var(--accent-red);
+      box-shadow: 0 20px 60px rgba(178,34,34,0.25);
+    }
+    
+    .document-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--accent-red), var(--accent-red-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 1rem;
+    }
+    
+    .document-card h3 {
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Timeline */
+    .timeline {
+      margin: 4rem 0;
+    }
+    
+    .timeline-item {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+      border-left: 4px solid var(--accent-gold);
+      position: relative;
+      transition: all 0.4s ease;
+    }
+    
+    .timeline-item:hover {
+      transform: translateX(10px);
+      border-left-color: var(--primary-red);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .timeline-year {
+      display: inline-block;
+      background: var(--primary-red);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Security Notice */
+    .security-notice {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 4rem 0;
+      text-align: center;
+      border: 2px solid var(--accent-red);
+    }
+    
+    @media (max-width: 768px) {
+      .truth-hero h1 { font-size: 2.2rem; }
+      .archive-container { padding: 2rem 1rem; }
+      .document-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
 
-    <!-- ★ NEW SECTION ABOUT THE YOUTH OF TIGRAY ★ -->
-    <section class="youth-truth">    
-        <div class="container">    
-            <h2>Critical Truths of the Youth of Tigray</h2>    
-            <p class="intro">
-                For more than 50 years, generation after generation of Tigrayan youth have endured systematic suffering under the Ethiopian state. 
-                We were promised change, peace, and equality—but instead, we inherited cycles of repression, war, and targeted violence.
-            </p>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="/">
+        <svg class="logo-svg" viewBox="0 0 600 300" width="200" height="60" aria-label="TIGRAY 2">
+          <defs>
+            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#b22222;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          
+          <rect x="0" y="0" width="600" height="300" rx="20" fill="url(#redGradient)"/>
+          
+          <text x="300" y="110" text-anchor="middle" 
+                font-family="Montserrat, sans-serif" 
+                font-size="60" 
+                font-weight="800" 
+                fill="url(#goldGradient)">
+            TIGRAY 2
+          </text>
+          
+          <text x="300" y="180" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="28" 
+                font-weight="600" 
+                fill="#ffffff">
+            INTERNAL RENEWAL
+          </text>
+        </svg>
+      </a>
 
-            <div class="pillar-grid">    
-                <div class="pillar">    
-                    <h3>WE DEMAND TRUTH</h3>    
-                    <p>We refuse silence. We seek full acknowledgment of the crimes committed against our people, without distortion, denial, or political manipulation.</p>    
-                </div>    
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button id="hambtn" class="hambtn" aria-expanded="false" aria-controls="primary-menu" title="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
 
-                <div class="pillar">    
-                    <h3>WE DEMAND PEACE</h3>    
-                    <p>A peace built on justice, accountability, and the freedom for Tigray to determine its own future without fear or coercion.</p>    
-                </div>    
+        <ul id="primary-menu" class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="youth.html">Youth</a></li>
+          <li><a href="truth.html" class="active">Truth Archive</a></li>
+          <li><a href="vision.html">Vision & Future</a></li>
+          <li><a href="action.html">Take Action</a></li>
+          <li><a href="manifesto.html#sign" class="cta">Sign Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-                <div class="pillar">    
-                    <h3>WE DEMAND REHABILITATION</h3>    
-                    <p>Rebuilding our destroyed homeland—schools, hospitals, communities, identity, and future.  
-                       Trauma healing, economic restoration, and support for survivors must be at the center.</p>    
-                </div>
+  <!-- Truth Hero -->
+  <section class="truth-hero">
+    <div class="container">
+      <h1>TRUTH ARCHIVE</h1>
+      <p class="hero-lead" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">
+        Documenting evidence, preserving testimonies, and securing truth for justice and future generations.
+      </p>
+    </div>
+  </section>
 
-                <div class="pillar">    
-                    <h3>A GENERATION THAT SURVIVED</h3>    
-                    <p>We grew up through siege, famine, digital blackout, and genocide. We carry both the scars and the determination to never allow this to happen again.</p>    
-                </div>    
+  <!-- Archive Content -->
+  <main class="archive-container">
+    <!-- Archive Statement -->
+    <section class="archive-statement">
+      <h2 style="color: var(--accent-gold); margin-bottom: 1rem;">Why We Document Truth</h2>
+      <p style="color: var(--muted); line-height: 1.8;">
+        Truth is the foundation of justice. Without accurate documentation of what happened, justice cannot be served, 
+        and history becomes vulnerable to erasure. The Tigray 2 Truth Archive serves as a permanent digital repository 
+        for evidence, testimonies, and documentation—ensuring that future generations know what truly occurred and 
+        that accountability remains possible.
+      </p>
+    </section>
 
-                <div class="pillar">    
-                    <h3>OUR FUTURE IS SOVEREIGNTY</h3>    
-                    <p>The youth of Tigray believe in a future where our people live free from imposed suffering, free from fear, and free to build a peaceful, democratic, sovereign nation.</p>    
-                </div>    
-            </div>    
+    <!-- Document Types -->
+    <section>
+      <h2 style="text-align: center; color: var(--accent-gold); margin: 4rem 0 2rem;">What We Document</h2>
+      
+      <div class="document-grid">
+        <div class="document-card">
+          <div class="document-icon"><i class="fas fa-file-alt"></i></div>
+          <h3>Testimonies</h3>
+          <p style="color: var(--muted); font-size: 0.95rem;">
+            First-hand accounts from survivors, witnesses, and affected communities. All testimonies are anonymized for safety.
+          </p>
+        </div>
+        
+        <div class="document-card">
+          <div class="document-icon"><i class="fas fa-camera"></i></div>
+          <h3>Evidence</h3>
+          <p style="color: var(--muted); font-size: 0.95rem;">
+            Photographs, videos, satellite imagery, and other visual evidence documenting events and violations.
+          </p>
+        </div>
+        
+        <div class="document-card">
+          <div class="document-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Reports</h3>
+          <p style="color: var(--muted); font-size: 0.95rem;">
+            Statistical data, human rights reports, and analysis from credible organizations and researchers.
+          </p>
+        </div>
+        
+        <div class="document-card">
+          <div class="document-icon"><i class="fas fa-newspaper"></i></div>
+          <h3>Media Coverage</h3>
+          <p style="color: var(--muted); font-size: 0.95rem;">
+            News articles, investigative journalism, and international media reports for historical context.
+          </p>
+        </div>
+      </div>
+    </section>
 
-            <p class="closing" style="margin-top: 2rem; text-align: center;">
-                <em>We are the generation that refuses erasure.  
-                We are the generation that turns trauma into transformation.</em>
-            </p>
-        </div>    
-    </section>    
+    <!-- Historical Timeline -->
+    <section class="timeline">
+      <h2 style="text-align: center; color: var(--accent-gold); margin: 4rem 0 2rem;">Key Events Timeline</h2>
+      
+      <div class="timeline-item">
+        <div class="timeline-year">2020-2022</div>
+        <h3>Documentation Begins</h3>
+        <p style="color: var(--muted);">
+          Initial collection of testimonies and evidence during the conflict period. Establishment of secure channels for submission.
+        </p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-year">2023</div>
+        <h3>Digital Archive Development</h3>
+        <p style="color: var(--muted);">
+          Creation of secure digital infrastructure. Implementation of encryption and distributed storage systems.
+        </p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <h3>International Partnerships</h3>
+        <p style="color: var(--muted);">
+          Collaboration with human rights organizations and academic institutions for verification and analysis.
+        </p>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <h3>Tigray 2 Integration</h3>
+        <p style="color: var(--muted);">
+          Integration of truth documentation with the Tigray 2 movement principles and vision for justice.
+        </p>
+      </div>
+    </section>
 
-    <footer>    
-        <div class="container">    
-            <p>© 2025 Tigray Generational Movement. Archive protected under international law.</p>    
-            <p class="warning">⚠️ Handle evidence with care. Use secure channels.</p>    
-        </div>    
-    </footer>    
-</body>    
+    <!-- Security Notice -->
+    <section class="security-notice">
+      <h3 style="color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-shield-alt"></i> Secure Submission</h3>
+      <p style="color: var(--muted); margin-bottom: 1.5rem;">
+        We use military-grade encryption to protect all submissions. Sources are anonymized and data is stored in 
+        distributed, secure locations. Never share sensitive information through insecure channels.
+      </p>
+      <a class="btn primary" href="action.html">
+        <i class="fas fa-lock"></i> Learn About Secure Submission
+      </a>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="text-align: center; margin: 4rem 0;">
+      <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem;">Contribute to the Archive</h2>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto 2rem;">
+        Your testimony matters. Help us document truth for justice. All submissions are confidential and secure.
+      </p>
+      <div class="btn-row" style="justify-content: center;">
+        <a class="btn primary" href="action.html">
+          <i class="fas fa-upload"></i> Submit Evidence
+        </a>
+        <a class="btn outline" href="vision.html">
+          <i class="fas fa-eye"></i> View Our Vision
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="brand-col">
+        <svg class="footer-logo" viewBox="0 0 400 200" width="180" height="90" aria-label="TIGRAY 2">
+          <rect x="0" y="0" width="400" height="200" rx="10" fill="#b22222"/>
+          <text x="200" y="80" text-anchor="middle" 
+                font-family="Montserrat, sans-serif" 
+                font-size="36" 
+                font-weight="800" 
+                fill="#ffd700">
+            TIGRAY 2
+          </text>
+          <text x="200" y="130" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="16" 
+                font-weight="600" 
+                fill="#ffffff">
+            INTERNAL RENEWAL
+          </text>
+        </svg>
+        <p style="color: var(--muted); margin-top: 10px; font-size: 0.9rem;">
+          Memory • Resistance • Sovereignty • For All Generations
+        </p>
+      </div>
+
+      <nav class="footnav" aria-label="Footer links">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="manifesto.html"><i class="fas fa-scroll"></i> Manifesto</a>
+        <a href="truth.html" class="active"><i class="fas fa-archive"></i> Truth Archive</a>
+        <a href="youth.html"><i class="fas fa-users"></i> Youth</a>
+        <a href="vision.html"><i class="fas fa-eye"></i> Vision</a>
+        <a href="action.html"><i class="fas fa-fist-raised"></i> Take Action</a>
+      </nav>
+
+      <div class="legal">
+        <p>© <span id="currentYear">2025</span> TIGRAY 2 Movement</p>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 5px;">
+          <i class="fas fa-shield-alt"></i> Secure Archive<br>
+          <i class="fas fa-user-secret"></i> Encrypted Data<br>
+          <i class="fas fa-globe"></i> Global Documentation
+        </p>
+        <p class="security">⚠️ Stay Secure. Use VPN. Share Wisely.</p>
+        <p style="color: var(--muted); font-size: 0.8rem; margin-top: 10px;">
+          #TruthForJustice #Tigray2 #ChangeGeneration
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script>
+    // Update current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>

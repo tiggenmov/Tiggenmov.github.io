@@ -1,155 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision & Future | Tig Gen Mov</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TIGRAY 2 — Vision & Future</title>
+  <meta name="description" content="The vision for Tigray 2: Sovereignty, Justice, and Renewal. Our roadmap for the future of Tigray." />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="Tigray vision, Tigray future, sovereignty roadmap, Tigray 2030, Change Generation vision">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="TIGRAY 2 Movement">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="TIGRAY 2 — Vision & Future" />
+  <meta property="og:description" content="Our vision for a sovereign, just, and renewed Tigray." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" />
+  <meta property="og:url" content="https://tiggenmov.github.io/vision.html" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Page-specific CSS -->
+  <style>
+    /* Vision Hero */
+    .vision-hero {
+      min-height: 70vh;
+      padding: 120px 0 80px;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+                  url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      animation: fadeInUp 1.2s ease-out;
+    }
+    
+    .vision-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      background: linear-gradient(90deg, var(--accent-gold), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    
+    /* Vision Container */
+    .vision-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+    
+    /* Roadmap */
+    .roadmap {
+      margin: 4rem 0;
+    }
+    
+    .roadmap-phase {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--accent-gold);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      transition: all 0.4s ease;
+    }
+    
+    .roadmap-phase:hover {
+      transform: translateX(10px);
+      border-left-color: var(--primary-red);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .phase-year {
+      display: inline-block;
+      background: var(--primary-red);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    
+    .phase-content h3 {
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+    }
+    
+    /* Vision Goals */
+    .vision-goals {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    
+    .goal-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      transition: 0.4s ease;
+      animation: cardFloat 6s ease-in-out infinite;
+    }
+    
+    .goal-card:nth-child(1) { animation-delay: 0s; }
+    .goal-card:nth-child(2) { animation-delay: 0.2s; }
+    .goal-card:nth-child(3) { animation-delay: 0.4s; }
+    
+    .goal-card:hover {
+      transform: translateY(-12px);
+      border-color: var(--accent-red);
+      box-shadow: 0 20px 60px rgba(178,34,34,0.25);
+    }
+    
+    .goal-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--accent-red), var(--accent-red-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+    
+    .goal-card h3 {
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+    }
+    
+    /* Call to Action */
+    .vision-cta {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-radius: 12px;
+      margin: 4rem 0;
+    }
+    
+    @media (max-width: 768px) {
+      .vision-hero h1 { font-size: 2.2rem; }
+      .vision-container { padding: 2rem 1rem; }
+      .goal-card { padding: 1.5rem; }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 60, density: { enable: true, value_area: 800 } },
-                color: { value: "#ffd700" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#b22222", opacity: 0.2, width: 1 },
-                move: { enable: true, speed: 2, direction: "none" }
-            }
-        });
-    </script>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="/">
+        <svg class="logo-svg" viewBox="0 0 600 300" width="200" height="60" aria-label="TIGRAY 2">
+          <defs>
+            <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#b22222;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ffed4e;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          
+          <rect x="0" y="0" width="600" height="300" rx="20" fill="url(#redGradient)"/>
+          
+          <text x="300" y="110" text-anchor="middle" 
+                font-family="Montserrat, sans-serif" 
+                font-size="60" 
+                font-weight="800" 
+                fill="url(#goldGradient)">
+            TIGRAY 2
+          </text>
+          
+          <text x="300" y="180" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="28" 
+                font-weight="600" 
+                fill="#ffffff">
+            INTERNAL RENEWAL
+          </text>
+        </svg>
+      </a>
 
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">TIG GEN MOV</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="truth.html">Truth & Archive</a>
-                <a href="vision.html">Vision & Future</a>
-                <a href="action.html">Take Action</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </nav>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button id="hambtn" class="hambtn" aria-expanded="false" aria-controls="primary-menu" title="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
 
-    <section class="hero">
-        <div class="container">
-            <h1>VISION & FUTURE</h1>
-            <p class="tagline">Building the Sovereign Tigray of Tomorrow</p>
-            <p class="mission">Our vision is not just survival—it's thriving. It's a Tigray that controls its destiny, secures its people, and builds prosperity for generations to come.</p>
-            <a href="#sovereignty" class="btn">Explore Our Blueprint</a>
-        </div>
+        <ul id="primary-menu" class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="manifesto.html">Manifesto</a></li>
+          <li><a href="youth.html">Youth</a></li>
+          <li><a href="truth.html">Truth Archive</a></li>
+          <li><a href="vision.html" class="active">Vision & Future</a></li>
+          <li><a href="action.html">Take Action</a></li>
+          <li><a href="manifesto.html#sign" class="cta">Sign Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Vision Hero -->
+  <section class="vision-hero">
+    <div class="container">
+      <h1>OUR VISION FOR TIGRAY 2</h1>
+      <p class="hero-lead" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">
+        Building a sovereign, just, and renewed Tigray for future generations. Our roadmap to 2030.
+      </p>
+    </div>
+  </section>
+
+  <!-- Vision Content -->
+  <main class="vision-container">
+    <!-- Vision Statement -->
+    <section class="vision-statement">
+      <h2 style="text-align: center; color: var(--accent-gold); margin-bottom: 2rem;">The Tigray 2 Vision</h2>
+      
+      <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--primary-red);">
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--muted);">
+          We envision a Tigray where power truly resides with the people—a society built on justice, transparency, and dignity. 
+          A Tigray where youth lead innovation, where institutions serve rather than rule, and where our collective memory 
+          becomes the foundation for a sovereign future.
+        </p>
+      </div>
     </section>
 
-    <section class="pillars" id="sovereignty">
-        <div class="container">
-            <h2>The Sovereign Framework</h2>
-            <div class="pillar-grid">
-                <div class="pillar">
-                    <h3>🛡️ SECURITY AUTONOMY</h3>
-                    <p>A professional Tigray  Defense Force under civilian oversight. Control of borders, airspace, and internal security. No foreign or federal troops without Tigrayan consent.</p>
-                    <ul>
-                        <li> professional soldiers by 2030</li>
-                        <li>Independent air defense system</li>
-                        <li>Cyber security command</li>
-                        <li>Border control with biometric systems</li>
-                    </ul>
-                </div>
-                <div class="pillar">
-                    <h3>💎 ECONOMIC SOVEREIGNTY</h3>
-                    <p>Control over natural resources, taxation, trade, and monetary policy. Reconstruction funded through Tigray bonds, diaspora investment, and transparent resource management.</p>
-                    <ul>
-                        <li>Tigray Sovereign Wealth Fund ($500M target)</li>
-                        <li>Gold & mineral resource control</li>
-                        <li>Agricultural self-sufficiency</li>
-                        <li>Digital economy infrastructure</li>
-                    </ul>
-                </div>
-                <div class="pillar">
-                    <h3>🏛️ POLITICAL SELF-RULE</h3>
-                    <p>A confederal relationship where Tigray controls its constitution, judiciary, education, health, and foreign trade. Or full independence through democratic referendum.</p>
-                    <ul>
-                        <li>Tigray Constitution (2030s target)</li>
-                        <li>Independent judicial system</li>
-                        <li>Education in Tigrinya language</li>
-                        <li>Healthcare sovereignty</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, rgba(178,34,34,0.1), rgba(255,215,0,0.1)); border-radius: 15px; text-align: center;">
-                <h3 style="color: #b22222; margin-bottom: 1.5rem; font-size: 2.5rem;">The Generational Covenant</h3>
-                <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto; line-height: 1.9; color: #333;">
-                    <i>"We pledge to build a Tigray where no child knows famine, where no mother fears soldiers, 
-                    where no elder dies displaced, and where every generation adds a stone to the fortress 
-                    of our sovereignty. This is our epoch. This is our covenant."</i>
-                </p>
-                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; color: #b22222; font-weight: bold;">2025</div>
-                        <div>Foundation Phase</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; color: #b22222; font-weight: bold;">2027</div>
-                        <div>Sovereignty Phase</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; color: #b22222; font-weight: bold;">2030</div>
-                        <div>Independence Phase</div>
-                    </div>
-                </div>
-            </div>
+    <!-- Roadmap -->
+    <section class="roadmap">
+      <h2 style="text-align: center; color: var(--accent-gold); margin: 4rem 0 2rem;">Our 2025-2030 Roadmap</h2>
+      
+      <div class="roadmap-phase">
+        <div class="phase-year">2025-2026</div>
+        <div class="phase-content">
+          <h3>Foundation & Mobilization</h3>
+          <ul style="color: var(--muted); padding-left: 1.5rem;">
+            <li>Establish TIGRAY 2 movement structures</li>
+            <li>Launch digital truth archive platform</li>
+            <li>Begin civic education programs</li>
+            <li>Form youth leadership councils</li>
+            <li>Create economic cooperatives</li>
+          </ul>
         </div>
+      </div>
+      
+      <div class="roadmap-phase">
+        <div class="phase-year">2027-2028</div>
+        <div class="phase-content">
+          <h3>Institution Building</h3>
+          <ul style="color: var(--muted); padding-left: 1.5rem;">
+            <li>Establish independent media platforms</li>
+            <li>Launch community justice initiatives</li>
+            <li>Create youth entrepreneurship programs</li>
+            <li>Build digital governance prototypes</li>
+            <li>Establish international partnerships</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="roadmap-phase">
+        <div class="phase-year">2029-2030</div>
+        <div class="phase-content">
+          <h3>Sovereignty & Self-Determination</h3>
+          <ul style="color: var(--muted); padding-left: 1.5rem;">
+            <li>Implement participatory governance models</li>
+            <li>Establish economic independence programs</li>
+            <li>Launch cultural renaissance initiatives</li>
+            <li>Create sustainable development plans</li>
+            <li>Secure international recognition</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section class="latest" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
-        <div class="container">
-            <h2>The 2025 Roadmap</h2>
-            <div class="update">
-                <h4><i class="fas fa-calendar-check"></i> Q2 2025 - Digital Foundation</h4>
-                <p>Launch of Tigray Generational Movement digital platform. International advocacy campaign begins. Evidence collection drive.</p>
-            </div>
-            <div class="update">
-                <h4><i class="fas fa-gavel"></i> Q3 2025 - Legal Offensive</h4>
-                <p>ICC case filing completed. Universal jurisdiction cases in 3 countries. Sanctions lobbying intensifies.</p>
-            </div>
-            <div class="update">
-                <h4><i class="fas fa-flag"></i> Q4 2025 - Sovereignty Preparation</h4>
-                <p>Draft Tigray Constitution released. Economic reconstruction plans finalized. Security framework established.</p>
-            </div>
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="action.html" class="btn">Join the 2025 Campaign</a>
-            </div>
-        </div>
+    <!-- Vision Goals -->
+    <section class="vision-goals">
+      <div class="goal-card">
+        <div class="goal-icon"><i class="fas fa-landmark"></i></div>
+        <h3>Political Sovereignty</h3>
+        <p style="color: var(--muted);">True self-determination with accountable leadership and transparent governance systems.</p>
+      </div>
+      
+      <div class="goal-card">
+        <div class="goal-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Economic Independence</h3>
+        <p style="color: var(--muted);">Sustainable local economies, youth entrepreneurship, and community-owned resources.</p>
+      </div>
+      
+      <div class="goal-card">
+        <div class="goal-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Educational Excellence</h3>
+        <p style="color: var(--muted);">Modern education systems that preserve our culture while embracing innovation.</p>
+      </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Tigray Generational Movement. Vision requires courage; sovereignty requires unity.</p>
-            <p class="warning">⚠️ Share this vision. Discuss it. Organize around it. Make it reality.</p>
-        </div>
-    </footer>
+    <!-- Call to Action -->
+    <section class="vision-cta">
+      <h2 style="color: var(--accent-gold); margin-bottom: 1.5rem;">Join Our Vision</h2>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto 2rem;">
+        This vision can only become reality with your participation. Join the Change Generation today.
+      </p>
+      <div class="btn-row" style="justify-content: center;">
+        <a class="btn primary" href="action.html">
+          <i class="fas fa-fist-raised"></i> Take Action
+        </a>
+        <a class="btn outline" href="manifesto.html#sign">
+          <i class="fas fa-signature"></i> Sign Manifesto
+        </a>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // Simple animation for vision page
-        document.addEventListener('DOMContentLoaded', function() {
-            const pillars = document.querySelectorAll('.pillar');
-            pillars.forEach((pillar, index) => {
-                pillar.style.animationDelay = `${index * 0.3}s`;
-            });
-            
-            // Add scroll effect
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.5;
-                document.querySelector('.hero').style.backgroundPosition = `center ${rate}px`;
-            });
-        });
-    </script>
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="brand-col">
+        <svg class="footer-logo" viewBox="0 0 400 200" width="180" height="90" aria-label="TIGRAY 2">
+          <rect x="0" y="0" width="400" height="200" rx="10" fill="#b22222"/>
+          <text x="200" y="80" text-anchor="middle" 
+                font-family="Montserrat, sans-serif" 
+                font-size="36" 
+                font-weight="800" 
+                fill="#ffd700">
+            TIGRAY 2
+          </text>
+          <text x="200" y="130" text-anchor="middle" 
+                font-family="'Source Sans 3', sans-serif" 
+                font-size="16" 
+                font-weight="600" 
+                fill="#ffffff">
+            INTERNAL RENEWAL
+          </text>
+        </svg>
+        <p style="color: var(--muted); margin-top: 10px; font-size: 0.9rem;">
+          Memory • Resistance • Sovereignty • For All Generations
+        </p>
+      </div>
+
+      <nav class="footnav" aria-label="Footer links">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="manifesto.html"><i class="fas fa-scroll"></i> Manifesto</a>
+        <a href="vision.html" class="active"><i class="fas fa-eye"></i> Vision</a>
+        <a href="youth.html"><i class="fas fa-users"></i> Youth</a>
+        <a href="truth.html"><i class="fas fa-archive"></i> Truth Archive</a>
+        <a href="action.html"><i class="fas fa-fist-raised"></i> Take Action</a>
+      </nav>
+
+      <div class="legal">
+        <p>© <span id="currentYear">2025</span> TIGRAY 2 Movement</p>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 5px;">
+          <i class="fas fa-shield-alt"></i> Secure Platform<br>
+          <i class="fas fa-user-secret"></i> Privacy First<br>
+          <i class="fas fa-globe"></i> Global Movement
+        </p>
+        <p class="security">⚠️ Stay Secure. Use VPN. Share Wisely.</p>
+        <p style="color: var(--muted); font-size: 0.8rem; margin-top: 10px;">
+          #Tigray2 #ChangeGeneration #InternalRenewal
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script>
+    // Update current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
